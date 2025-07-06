@@ -1,0 +1,99 @@
+/* src/styles/Footer.css */
+
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 60px 0 20px;
+  font-size: 0.9em;
+}
+
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.footer-info, .footer-links, .footer-social {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-info h3, .footer-links h3, .footer-social h3 {
+  font-size: 1.4em;
+  margin-bottom: 20px;
+  color: #007bff; /* Màu nhấn */
+}
+
+.footer-info p {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #007bff;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.5em;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #444;
+  padding-top: 20px;
+}
+
+.footer-bottom p {
+  margin-bottom: 5px;
+  color: #bbb;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-info, .footer-links, .footer-social {
+    min-width: unset;
+    width: 100%;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+}
