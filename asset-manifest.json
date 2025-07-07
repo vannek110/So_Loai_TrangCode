@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/So_Loai_TrangCode/static/css/main.ef426e46.css",
-    "main.js": "/So_Loai_TrangCode/static/js/main.414cef48.js",
+    "main.css": "/So_Loai_TrangCode/static/css/main.bc23d608.css",
+    "main.js": "/So_Loai_TrangCode/static/js/main.f3bef285.js",
     "static/js/453.670e15c7.chunk.js": "/So_Loai_TrangCode/static/js/453.670e15c7.chunk.js",
-    "static/media/student-success.png": "/So_Loai_TrangCode/static/media/student-success.c325b815b7bbeed196bf.png",
-    "static/media/lotus.jpg": "/So_Loai_TrangCode/static/media/lotus.e2496c268f0f3c013c43.jpg",
-    "static/media/anh-truong.png.jpg": "/So_Loai_TrangCode/static/media/anh-truong.png.11a1bfdca291f5423570.jpg",
-    "static/media/group-study.jpg": "/So_Loai_TrangCode/static/media/group-study.3cc164b04c371004fee8.jpg",
-    "static/media/aodai.jpg": "/So_Loai_TrangCode/static/media/aodai.74112147d8b688255631.jpg",
-    "static/media/summer-study.jpg": "/So_Loai_TrangCode/static/media/summer-study.6fd72df5582815c92d4c.jpg",
-    "static/media/bright-colors.webp": "/So_Loai_TrangCode/static/media/bright-colors.1f0028369e1e7d0a355e.webp",
+    "static/media/mid-section-img-2.jpg": "/So_Loai_TrangCode/static/media/mid-section-img-2.0b969b0542086a293cd9.jpg",
+    "static/media/hero-bg.webp": "/So_Loai_TrangCode/static/media/hero-bg.93b291fea086f81f8375.webp",
+    "static/media/gallery-img-2.webp": "/So_Loai_TrangCode/static/media/gallery-img-2.fcdd1b36e0ca8c403db4.webp",
+    "static/media/mid-section-img-1.jpg": "/So_Loai_TrangCode/static/media/mid-section-img-1.9c90290c156cb4709784.jpg",
+    "static/media/hero-bg.jpg": "/So_Loai_TrangCode/static/media/hero-bg.aeb33b684235cee966a9.jpg",
+    "static/media/gallery-img-1.jpg": "/So_Loai_TrangCode/static/media/gallery-img-1.0d948336b638dd17a425.jpg",
+    "static/media/small-card-icon-3.jpg": "/So_Loai_TrangCode/static/media/small-card-icon-3.f3ee5dc7d8b9da4f66ea.jpg",
     "static/media/btec-logo.png.png": "/So_Loai_TrangCode/static/media/btec-logo.png.017d8deed024e76951f1.png",
     "index.html": "/So_Loai_TrangCode/index.html",
-    "main.ef426e46.css.map": "/So_Loai_TrangCode/static/css/main.ef426e46.css.map",
-    "main.414cef48.js.map": "/So_Loai_TrangCode/static/js/main.414cef48.js.map",
+    "main.bc23d608.css.map": "/So_Loai_TrangCode/static/css/main.bc23d608.css.map",
+    "main.f3bef285.js.map": "/So_Loai_TrangCode/static/js/main.f3bef285.js.map",
     "453.670e15c7.chunk.js.map": "/So_Loai_TrangCode/static/js/453.670e15c7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ef426e46.css",
-    "static/js/main.414cef48.js"
+    "static/css/main.bc23d608.css",
+    "static/js/main.f3bef285.js"
   ]
 }
