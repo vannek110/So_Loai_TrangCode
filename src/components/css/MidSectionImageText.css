@@ -1,0 +1,48 @@
+/* src/components/css/MidSectionImageText.css */
+.mid-section-image-text {
+  padding: 60px 0;
+  background-color: transparent;
+}
+.mid-section-image-text .content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.mid-section-image-text .image-part {
+  flex: 1;
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 20px var(--shadow-light);
+}
+.mid-section-image-text .text-part {
+  flex: 1;
+  padding: 40px; /* Tăng padding */
+}
+.mid-section-image-text .text-part h3 {
+  font-size: 2.2em; /* To hơn */
+  color: var(--heading-color);
+  margin-bottom: 20px;
+}
+.mid-section-image-text .text-part p {
+  font-size: 1.1em;
+  margin-bottom: 25px;
+}
+.mid-section-image-text.reversed .content-wrapper {
+  flex-direction: row-reverse;
+}
+@media (max-width: 992px) {
+  .mid-section-image-text .content-wrapper {
+    flex-direction: column;
+  }
+  .mid-section-image-text.reversed .content-wrapper {
+    flex-direction: column;
+  }
+  .mid-section-image-text .image-part {
+    width: 100%;
+    min-height: 250px;
+  }
+}

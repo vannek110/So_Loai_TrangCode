@@ -1,16 +1,16 @@
+/* src/components/css/HeroSection.css */
 .hero-section {
   position: relative;
-  height: 70vh; /* Adjust height as needed */
+  height: 80vh; /* Tăng chiều cao để tạo ấn tượng */
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white; /* Ensure text is visible on background */
+  color: white;
   overflow: hidden;
 }
-
 .hero-section::before {
   content: '';
   position: absolute;
@@ -18,59 +18,50 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Overlay for readability */
+  background-color: rgba(0, 0, 0, 0.4); /* Overlay nhẹ */
   z-index: 1;
 }
-
 .hero-content {
   position: relative;
   z-index: 2;
   max-width: 900px;
   padding: 20px;
 }
-
 .hero-content h1 {
-  font-size: 3em;
+  font-size: 3.8em;
   margin-bottom: 20px;
   line-height: 1.2;
+  color: rgb(251, 249, 248);
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
-
-.hero-content .slogan {
+.slogan-text {
   font-size: 1.4em;
-  margin-bottom: 30px;
-}
-
-.hero-content .keywords-highlight {
-    font-size: 1.1em;
-    margin-bottom: 40px;
-    font-weight: bold;
-}
-
-.hero-content .keyword {
-    color: #ffda47; /* Highlight color for keywords */
-    font-weight: bold;
-}
-
-.btn-learn-more {
-  display: inline-block;
-  background-color: #007bff; /* Example button color, adapt to BTEC branding */
+  margin-bottom: 20px;
   color: white;
-  padding: 15px 30px;
-  text-decoration: none;
-  border-radius: 5px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+.keywords-highlight {
   font-size: 1.1em;
-  transition: background-color 0.3s ease;
+  margin-bottom: 40px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
-
-.btn-learn-more:hover {
-  background-color: #0056b3;
+.keywords-highlight .keyword {
+  color: var(--color-yellow); /* Vàng nắng cho từ khóa trên nền tối */
 }
-
+.hero-btn {
+  padding: 15px 40px;
+  border-radius: 50px; /* Nút bo tròn */
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
 @media (max-width: 768px) {
   .hero-content h1 {
-    font-size: 2em;
+    font-size: 2.5em;
   }
-  .hero-content .slogan {
+  .slogan-text, .keywords-highlight {
     font-size: 1em;
   }
 }

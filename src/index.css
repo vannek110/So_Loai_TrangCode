@@ -1,3 +1,5 @@
+/* src/index.css */
+
 /* Basic Reset */
 * {
   margin: 0;
@@ -5,16 +7,37 @@
   box-sizing: border-box;
 }
 
+/* Định nghĩa các biến CSS cho bảng màu */
+:root {
+  --color-pink: #F299A0;
+  --color-mint: #79D9BE;
+  --color-green-dark: #63A621;
+  --color-yellow: #F2B705;
+  --color-orange: #F27405;
+
+  /* Các màu nền và chữ chung dựa trên bảng màu */
+  --primary-bg: #FCFDFC; /* Gần như trắng, nhưng có chút sắc thái mát mẻ để hòa vào màu mint */
+  --card-bg: #FFFFFF;    /* Nền cho các khối nội dung, card */
+  --text-dark: #333;      /* Màu chữ chính */
+  --text-medium: #555;    /* Màu chữ phụ */
+  --heading-color: var(--color-green-dark); /* Tiêu đề màu xanh lá đậm */
+  --button-color: var(--color-orange); /* Nút màu cam tươi */
+  --button-hover-color: #E66600; /* Cam đậm hơn khi hover */
+  --link-color: var(--color-mint); /* Liên kết màu xanh mint */
+  --shadow-light: rgba(0, 0, 0, 0.08); /* Đổ bóng nhẹ nhàng */
+}
+
 body {
-  font-family: 'Arial', sans-serif; /* Use a font that fits BTEC branding */
+  background-color: var(--primary-bg); /* Nền chính xuyên suốt */
+  font-family: 'Arial', sans-serif; /* Hoặc font khác phù hợp */
   line-height: 1.6;
-  color: #333;
+  color: var(--text-dark);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 html {
-  scroll-behavior: smooth; /* For smooth scrolling to sections */
+  scroll-behavior: smooth;
 }
 
 .container {
@@ -23,17 +46,67 @@ html {
   padding: 0 20px;
 }
 
-/* Reusable buttons, if any */
+/* Common Section Styling */
+section {
+  padding: 80px 0; /* Khoảng cách giữa các section */
+  background-color: transparent; /* Mặc định trong suốt để hòa vào body */
+}
+
+/* Common Card/Box Styling */
+.card-box {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--shadow-light);
+  padding: 30px;
+  text-align: left;
+}
+
+/* Common Titles */
+.section-title {
+  text-align: center;
+  font-size: 2.8em;
+  color: var(--heading-color);
+  margin-bottom: 50px;
+}
+
+/* Common Buttons */
 .btn {
   display: inline-block;
-  padding: 10px 20px;
-  background-color: #007bff;
+  padding: 12px 25px;
+  background-color: var(--button-color);
   color: white;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 5px; /* Hoặc 50px cho bo tròn mạnh */
+  font-size: 1.1em;
   transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
 }
 
 .btn:hover {
-  background-color: #0056b3;
+  background-color: var(--button-hover-color);
+}
+
+/* Keyword Highlight */
+.keyword {
+  font-weight: bold;
+  color: var(--color-orange); /* Màu cam tươi cho từ khóa */
+}
+
+/* Link Styling */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Text Colors */
+p {
+  color: var(--text-medium);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
 }

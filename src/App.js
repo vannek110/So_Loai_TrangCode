@@ -1,36 +1,53 @@
-// frontend/src/App.js
+// src/App.js
 import React from 'react';
-import './App.css';
+import './index.css';
 
-import MouseTrail from './components/js/MouseTrail.js'; // Vẫn giữ hiệu ứng con trỏ toàn trang
 
-// KHÔNG import TextTrail ở đây nữa vì nó đã nằm trong HeroSection
-// import TextTrail from './components/js/TextTrail.js';
 
-// Import các components section của bạn
-import Header from './components/js/Header.js';
-import HeroSection from './components/js/HeroSection.js';
-import AboutBTEC from './components/js/AboutBTEC.js';
-import SummerInspiration from './components/js/SummerInspiration.js';
-import TraditionalValues from './components/js/TraditionalValues.js';
-import StudentJourney from './components/js/StudentJourney.js';
-import ContactSection from './components/js/ContactSection.js';
-import Footer from './components/js/Footer.js';
+// Import components
+import MouseTrail from './components/js/MouseTrail';
 
+import Header from './components/js/Header';
+import HeroSection from './components/js/HeroSection';
+import IntroBTEC from './components/js/IntroBTEC';
+import MidSectionImageText from './components/js/MidSectionImageText';
+import SmallCardsSection from './components/js/SmallCardsSection';
+import InspirationGallery from './components/js/InspirationGallery';
+import ContactSection from './components/js/ContactSection';
+import Footer from './components/js/Footer';
+
+// Import assets (ví dụ ảnh cho MidSectionImageText)
+import summerVibesImg from './assets/mid-section-img-1.jpg';
+import ancientWisdomImg from './assets/mid-section-img-2.jpg';
 
 function App() {
   return (
     <div className="App">
-      {/* MouseTrail bao phủ toàn trang */}
       <MouseTrail />
-
       <Header />
       <main>
         <HeroSection />
-        <AboutBTEC />
-        <SummerInspiration />
-        <TraditionalValues />
-        <StudentJourney />
+        <IntroBTEC />
+        {/* Phần ảnh lớn ngang đầu tiên */}
+        <MidSectionImageText
+          image={summerVibesImg}
+          title="Chào Hè Rực Rỡ Cùng BTEC!"
+          description="Đón chào một mùa hè đầy năng lượng và khám phá tại Cao đẳng quốc tế BTEC. Nơi đây, mỗi sĩ tử sẽ tìm thấy con đường riêng để phát triển."
+          buttonText="Xem Lộ Trình Học"
+          buttonHref="https://btec.fpt.edu.vn/"
+          isReversed={false}
+        />
+        <SmallCardsSection />
+        {/* Phần ảnh lớn ngang thứ hai, đảo ngược vị trí */}
+        <MidSectionImageText
+          image={ancientWisdomImg}
+          title="Giá Trị Cổ Truyền – Nền Tảng Vững Chắc"
+          description="BTEC tự hào gìn giữ và phát huy những nét đẹp cổ truyền Việt Nam, lồng ghép vào chương trình học để tạo nên những cá nhân toàn diện."
+          buttonText="Khám phá di sản"
+          buttonHref="#intro" // Hoặc một section khác về truyền thống
+          isReversed={true}
+        />
+        <InspirationGallery />
         <ContactSection />
       </main>
       <Footer />

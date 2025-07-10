@@ -1,48 +1,67 @@
 // src/components/js/Footer.js
-
 import React from 'react';
-import '../css/Footer.css';
+import './../../components/css/Footer.css';
+import BTECLogoWhite from './../../assets/btec-logo.png.png'; // Nếu có logo trắng cho nền tối
+// Hoặc sử dụng lại BTECLogo nếu nó hiển thị tốt trên nền tối
 
 function Footer() {
   return (
     <footer className="footer">
       <div className="container">
         <div className="footer-content">
-          <div className="footer-info">
-            <h3>Cao đẳng quốc tế BTEC</h3>
-            <p>Nơi Tinh Hoa Hội Tụ – Giữa Sắc Màu Mùa Hè</p>
-            <p>Địa chỉ: [Thông tin địa chỉ chính xác của BTEC]</p>
-            <p>Điện thoại: [Số điện thoại chính thức]</p>
-            <p>Email: [Địa chỉ email chính thức]</p>
+          <div className="footer-branding">
+            {/* Nếu có logo trắng, dùng nó, không thì dùng logo thường nếu hợp */}
+            <img src={BTECLogoWhite || './../../assets/btec-logo.png.png'} alt="BTEC International College Logo" />
+            <p>Cao đẳng quốc tế BTEC – Nơi Ươm Mầm Tinh Hoa.</p>
           </div>
           <div className="footer-links">
-            <h3>Liên kết nhanh</h3>
+            <h4>Liên kết nhanh</h4>
             <ul>
               <li><a href="#home">Trang Chủ</a></li>
-              <li><a href="#about">Giới Thiệu BTEC</a></li>
-              <li><a href="#summer">Cảm Hứng Mùa Hè</a></li>
-              <li><a href="#tradition">Giá Trị Cổ Truyền</a></li>
-              <li><a href="#student">Hành Trình Sĩ Tử</a></li>
+              <li><a href="#intro">Giới Thiệu</a></li>
+              <li><a href="#summer">Mùa Hè BTEC</a></li>
               <li><a href="#contact">Liên Hệ</a></li>
             </ul>
           </div>
-          <div className="footer-social">
-            <h3>Kết nối với chúng tôi</h3>
-            {/* Thêm các icon mạng xã hội nếu có, ví dụ */}
-            <div className="social-icons">
-              <a href="https://facebook.com/btec" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a>
-              <a href="https://youtube.com/btec" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube"></i></a>
-              {/* Đảm bảo bạn đã cài đặt Font Awesome hoặc icon library tương tự */}
-            </div>
+          <div className="footer-contact">
+            <h4>Thông tin liên hệ</h4>
+            <h5>Địa chỉ:</h5>
+            <li>
+              Hà Nội: Tòa BTEC FPT, Trịnh Văn Bô, Nam Từ Liêm, Hà Nội.
+            </li>
+            <li>
+              Hồ Chí Minh: Toà F, công viên phần mềm Quang Trung, P. Tân Chánh Hiệp, Q. 12, TP. Hồ Chí Minh.
+            </li>
+            <li>
+              Đà Nẵng: 66 Võ Văn Tần, Q. Thanh Khê, TP. Đà Nẵng.
+            </li>
+            <li>
+              Cần Thơ: Đường số 22, Phường Thường Thạnh, Quận Cái Răng, TP. Cần Thơ.
+            </li>
+            <h5>Điện thoại:</h5>
+            <li>
+              Hà Nội: 098 109 05 13
+            </li>
+            <li>
+              Hồ Chí Minh: 035 385 21 38
+            </li>
+            <li>
+              Đà Nẵng: 032 757 57 27
+            </li>
+            <li>
+              Cần Thơ: 096 705 76 05
+            </li>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Cao đẳng quốc tế BTEC. All Rights Reserved.</p>
-          <p>Thiết kế bởi Đội thi Trạng Code 2025</p>
+          <p>© {new Date().getFullYear()} Cao đẳng quốc tế BTEC. All Rights Reserved.</p>
+          <p className="made-with">
+            Thiết kế theo cảm hứng từ wireframe.
+            {/* Có thể thêm icon Visily nếu muốn và có nguồn */}
+          </p>
         </div>
       </div>
     </footer>
   );
 }
-
 export default Footer;

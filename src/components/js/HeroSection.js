@@ -1,25 +1,21 @@
+// src/components/js/HeroSection.js
 import React from 'react';
-import '../css/HeroSection.css';
-import summerBg from './../../assets/anh-truong.png.jpg'; 
+import './../../components/css/HeroSection.css';
+import heroBg from './../../assets/hero-bg.jpg'; // Ảnh nền lớn
 
 function HeroSection() {
   return (
-    <section className="hero-section" style={{ backgroundImage: `url(${summerBg})` }}>
+    <section className="hero-section" style={{ backgroundImage: `url(${heroBg})` }}>
       <div className="hero-content">
-        <h1>BTEC GIỮA SẮC MÀU MÙA HÈ – NƠI TINH HOA HỘI TỤ</h1>
-        <p className="slogan">
-          Mùa hè gió thổi lao xao, Trang đời mới mở, bước vào mộng xanh. [cite: 4]
-          Sĩ tử lặng lẽ học hành, Mong ngày vươn cánh, chạm thành ước ao. [cite: 5]
-        </p>
+        <h1>BTEC Hè Rực Rỡ</h1>
+        <p className="slogan-text">Nơi Tinh Hoa Hội Tụ – Hành Trình Sĩ Tử Vươn Xa</p>
         <p className="keywords-highlight">
-          Khám phá hành trình tại <span className="keyword">Cao đẳng quốc tế BTEC</span>,
-          nơi tinh thần <span className="keyword">sĩ tử</span> hòa quyện cùng giá trị
-          <span className="keyword">cổ truyền</span> trong không khí rực rỡ <span className="keyword">mùa hè</span>.
+          Cùng <span className="keyword">Cao đẳng quốc tế BTEC</span> khám phá <span className="keyword">mùa hè</span> rực rỡ,
+          nơi tinh thần <span className="keyword">sĩ tử</span> hòa quyện với giá trị <span className="keyword">cổ truyền</span>.
         </p>
-        <a href="#about" className="btn-learn-more">Tìm hiểu thêm về BTEC</a>
+        <a href="#intro" className="btn hero-btn">Khám Phá Ngay</a>
       </div>
     </section>
   );
 }
-
 export default HeroSection;

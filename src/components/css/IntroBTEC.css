@@ -1,0 +1,50 @@
+/* src/components/css/IntroBTEC.css */
+.intro-btec-section {
+  padding: 80px 0;
+  background-color: transparent;
+  text-align: center;
+}
+.intro-description {
+  font-size: 1.15em;
+  color: var(--text-medium);
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.info-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+.info-card {
+  text-align: center;
+  transition: transform 0.3s ease;
+  padding: 40px 25px; /* Tăng padding để trông thoáng hơn */
+}
+.info-card:hover {
+  transform: translateY(-8px);
+}
+.info-card img { /* Nếu có icon */
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+}
+.info-card h3 {
+  font-size: 1.8em; /* To hơn một chút */
+  color: var(--color-orange); /* Màu cam tươi */
+  margin-bottom: 15px;
+}
+.info-card p {
+  font-size: 1em;
+  color: var(--text-medium);
+}
+.view-details-btn {
+  margin-top: 20px;
+}
+@media (max-width: 768px) {
+  .info-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
