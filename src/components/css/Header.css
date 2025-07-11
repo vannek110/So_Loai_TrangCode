@@ -43,7 +43,7 @@
 .header-slogan {
   font-size: 1.2em; /* Kích thước slogan lớn hơn */
   font-weight: bold;
-  color: var(--heading-color); /* Màu tiêu đề của bạn */
+  color: rgb(23, 24, 54); /* Màu tiêu đề của bạn */
   transition: font-size 0.4s ease-in-out, opacity 0.4s ease-in-out;
   white-space: nowrap; /* Đảm bảo slogan không xuống dòng */
 }
@@ -72,8 +72,8 @@
 
 /* Get a Quote Button */
 .get-quote-btn {
-  background-color: rgb(245, 210, 70);
-  color: var(--heading-color);
+  background-color: rgb(249, 119, 53);
+  color: rgb(255, 255, 255);
   border: none;
   padding: 12px 25px;
   border-radius: 50px; /* Bo tròn mạnh */
@@ -81,11 +81,11 @@
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.4s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 .get-quote-btn:hover {
-  background-color: rgb(245, 149, 70);
-  color: yellow;
+  background-color: rgb(187, 92, 15);
+  color: rgb(255, 255, 255);
 }
 
 /* --- Scrolled State (khi cuộn xuống - như ảnh 1) --- */
@@ -121,25 +121,25 @@
 }
 
 .header.scrolled .navbar ul li a {
-  color: rgb(39, 98, 195);
+  color: rgb(0, 0, 0);
   font-size: 1.2em;
   transition: color 0.3s ease-in-out;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .header.scrolled .navbar ul li a:hover {
-  color: var(--color-yellow);
+  color: rgb(249, 119, 53);
 }
 
 .header.scrolled .get-quote-btn {
-  background-color: rgb(245, 210, 70);
-  color: var(--heading-color);
+  background-color: rgb(249, 119, 53);
+  color: rgb(255, 255, 255);
   padding: 12px 20px;
   font-size: 0.85em;
   box-shadow: none;
 }
 .header.scrolled .get-quote-btn:hover {
-  background-color: rgb(245, 149, 70);
-  color: yellow;
+  background-color: rgb(187, 92, 15);
+  color: rgb(255, 255, 255);
 }
 
 /* --- Responsive Adjustments --- */

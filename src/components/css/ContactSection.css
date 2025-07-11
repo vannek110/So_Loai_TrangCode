@@ -33,7 +33,7 @@
 /* Style cho các phần tử input/select/textarea (vẫn ở đây vì chúng là style của form) */
 .contact-stepper-wrapper h3 {
   font-size: 1.8em;
-  color: var(--heading-color);
+  color: rgb(23, 24, 54);
   margin-bottom: 20px;
 }
 
@@ -102,7 +102,7 @@
   color: var(--text-dark);
 }
 .summary-info p strong {
-    color: var(--heading-color);
+    color: rgb(23, 24, 54);
 }
 
 .final-message {
@@ -126,7 +126,7 @@
 }
 .static-contact-info h3 {
     font-size: 1.5em;
-    color: var(--heading-color);
+    color: rgb(23, 24, 54);
     margin-bottom: 15px;
 }
 .static-contact-info p {

@@ -24,7 +24,7 @@
 }
 .small-card-item h3 {
   font-size: 1.6em;
-  color: var(--heading-color); /* Màu xanh lá đậm */
+  color: rgb(23, 24, 54); /* Màu xanh lá đậm */
   margin-bottom: 15px;
 }
 .small-card-item p {

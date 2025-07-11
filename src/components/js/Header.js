@@ -32,9 +32,6 @@ function Header() {
             alt="BTEC International College Logo"
             className="btec-logo"
           />
-          <span className="header-slogan">
-            {isScrolled ? '' : 'Nơi Tinh Hoa Hội Tụ'}
-          </span>
         </div>
         <nav className="navbar">
           <ul>
