@@ -12,18 +12,9 @@ function Footer() {
           <div className="footer-branding">
             {/* Nếu có logo trắng, dùng nó, không thì dùng logo thường nếu hợp */}
             <img src={BTECLogoWhite || './../../assets/btec-logo.png.png'} alt="BTEC International College Logo" />
-            <p>Cao đẳng quốc tế BTEC – Nơi Ươm Mầm Tinh Hoa.</p>
+            <p>Cao đẳng quốc tế – Ươm Mầm Tinh Hoa.</p>
           </div>
           <div className="footer-links">
-            <h4>Liên kết nhanh</h4>
-            <ul>
-              <li><a href="#home">Trang Chủ</a></li>
-              <li><a href="#intro">Giới Thiệu</a></li>
-              <li><a href="#summer">Mùa Hè BTEC</a></li>
-              <li><a href="#contact">Liên Hệ</a></li>
-            </ul>
-          </div>
-          <div className="footer-contact">
             <h4>Thông tin liên hệ</h4>
             <h5>Địa chỉ:</h5>
             <li>
@@ -38,7 +29,9 @@ function Footer() {
             <li>
               Cần Thơ: Đường số 22, Phường Thường Thạnh, Quận Cái Răng, TP. Cần Thơ.
             </li>
-            <h5>Điện thoại:</h5>
+          </div>
+          <div className="footer-contact">
+            <h6>Điện thoại:</h6>
             <li>
               Hà Nội: 098 109 05 13
             </li>
@@ -56,7 +49,6 @@ function Footer() {
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} Cao đẳng quốc tế BTEC. All Rights Reserved.</p>
           <p className="made-with">
-            Thiết kế theo cảm hứng từ wireframe.
             {/* Có thể thêm icon Visily nếu muốn và có nguồn */}
           </p>
         </div>

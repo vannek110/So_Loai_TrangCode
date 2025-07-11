@@ -29,7 +29,7 @@
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
 
-  background-color: mintcream;
+  background-color: rgb(228, 228, 228);
 
 }
 
@@ -73,7 +73,7 @@
   transition: all 350ms;
   border-radius: 0.25rem;
   padding: 0.25rem 0.5rem;
-  color: #a3a3a3;
+  color: #000000;
   cursor: pointer;
 }
 
@@ -93,7 +93,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 9999px;
-  background-color: #5227FF;
+  background-color: rgb(83, 40, 254);
   color: #fff;
   font-weight: 500;
   letter-spacing: -0.025em;
@@ -102,17 +102,19 @@
 }
 
 .next-button:hover {
-  background-color: #5227FF;
+  background-color: rgb(83, 40, 254);
 }
 
 .next-button:active {
-  background-color: #5227FF;
+  background-color: rgb(83, 40, 254);
 }
 
 .step-indicator {
   position: relative;
   cursor: pointer;
   outline: none;
+  color: rgb(23, 24, 54);
+  
 }
 
 .step-indicator-inner {
@@ -123,7 +125,11 @@
   justify-content: center;
   border-radius: 9999px;
   font-weight: 600;
+  background-color: white; /* hoặc transparent nếu bạn muốn nền mờ */
+  border: 2px solid rgb(23, 24, 54); /* đường viền tròn */
+  color: rgb(23, 24, 54); /* màu số bước hoặc icon */
 }
+
 
 .active-dot {
   height: 0.75rem;

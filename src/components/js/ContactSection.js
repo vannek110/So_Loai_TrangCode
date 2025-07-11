@@ -30,7 +30,7 @@ function ContactSection() {
       <div className="container">
         <h2 className="section-title">Kết Nối Cùng BTEC – Chắp Cánh Ước Mơ</h2>
         <p className="contact-description">
-          Bạn muốn tìm hiểu thêm về <span className="keyword">Cao đẳng quốc tế BTEC</span>
+          Bạn muốn tìm hiểu thêm về <span className="keyword">Cao đẳng quốc tế BTEC </span>
           hay hành trình học tập dành cho <span className="keyword">sĩ tử</span> trong <span className="keyword">mùa hè</span> này?
           Hãy đăng ký tư vấn để chúng tôi liên hệ và hỗ trợ bạn.
         </p>

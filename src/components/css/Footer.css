@@ -22,7 +22,7 @@
   min-width: 250px;
 }
 .footer-branding img {
-  height: 45px;
+  height: 75px;
   margin-bottom: 15px;
 }
 .footer-branding p {
@@ -30,8 +30,7 @@
 }
 .footer-links h4, .footer-contact h4 {
   font-size: 1.3em;
-  margin-bottom: 20px;
-  color: var(--color-mint); /* Màu xanh mint cho tiêu đề footer */
+  color: rgb(249, 119, 53); /* Màu xanh mint cho tiêu đề footer */
 }
 .footer-links ul {
   list-style: none;
@@ -53,6 +52,11 @@
   line-height: 1.6;
   color: #bbb;
 }
+
+.footer-contact{
+  margin-left: 50px;
+}
+
 .footer-bottom {
   text-align: center;
   border-top: 1px solid #444;
@@ -69,4 +73,15 @@
     align-items: center;
     text-align: center;
   }
+}
+
+h5{
+  padding-top: 10px;
+  color: orange;
+}
+
+h6{
+  padding-top: 42px;
+  color: orange;
+  font-size: 11px;
 }
