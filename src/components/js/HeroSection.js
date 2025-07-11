@@ -20,7 +20,7 @@ import anh16 from './../../assets/anh16.jpg';
 import anh17 from './../../assets/anh17.jpg';
 import anh18 from './../../assets/anh18.jpg';
 import anh19 from './../../assets/anh19.png';
-import anh20 from './../../assets/student-success.png';
+import anh20 from './../../assets/anh20.webp';
 
 function HeroSection() {
   const images = [
