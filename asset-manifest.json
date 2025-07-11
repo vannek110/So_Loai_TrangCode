@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/So_Loai_TrangCode/static/css/main.86017d8a.css",
-    "main.js": "/So_Loai_TrangCode/static/js/main.1a19111b.js",
+    "main.css": "/So_Loai_TrangCode/static/css/main.7f7a089a.css",
+    "main.js": "/So_Loai_TrangCode/static/js/main.e94ee2f2.js",
     "static/js/453.670e15c7.chunk.js": "/So_Loai_TrangCode/static/js/453.670e15c7.chunk.js",
     "static/media/anh19.png": "/So_Loai_TrangCode/static/media/anh19.cf04945b83ed2aefa8cf.png",
     "static/media/anh13.jpg": "/So_Loai_TrangCode/static/media/anh13.812bb4f3fd2b7d332b85.jpg",
@@ -32,12 +32,12 @@
     "static/media/small-card-icon-3.jpg": "/So_Loai_TrangCode/static/media/small-card-icon-3.f3ee5dc7d8b9da4f66ea.jpg",
     "static/media/btec-logo.png.png": "/So_Loai_TrangCode/static/media/btec-logo.png.017d8deed024e76951f1.png",
     "index.html": "/So_Loai_TrangCode/index.html",
-    "main.86017d8a.css.map": "/So_Loai_TrangCode/static/css/main.86017d8a.css.map",
-    "main.1a19111b.js.map": "/So_Loai_TrangCode/static/js/main.1a19111b.js.map",
+    "main.7f7a089a.css.map": "/So_Loai_TrangCode/static/css/main.7f7a089a.css.map",
+    "main.e94ee2f2.js.map": "/So_Loai_TrangCode/static/js/main.e94ee2f2.js.map",
     "453.670e15c7.chunk.js.map": "/So_Loai_TrangCode/static/js/453.670e15c7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.86017d8a.css",
-    "static/js/main.1a19111b.js"
+    "static/css/main.7f7a089a.css",
+    "static/js/main.e94ee2f2.js"
   ]
 }
