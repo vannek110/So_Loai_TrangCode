@@ -1,50 +1,278 @@
 /* src/components/css/IntroBTEC.css */
-.intro-btec-section {
-  padding: 80px 0;
-  background-color: transparent;
-  text-align: center;
+
+/* --- Import Google Font: Poppins --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* --- Áp dụng font cho toàn bộ trang hoặc cho section này --- */
+.intro-btec-split-section * {
+    font-family: 'Poppins', sans-serif;
 }
-.intro-description {
-  font-size: 1.15em;
-  color: var(--text-medium);
-  margin-bottom: 40px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+
+/* --- Định nghĩa biến CSS RIÊNG cho IntroBTEC (Theme từ Banner Hero) --- */
+:root {
+    --intro-section-card-bg: var(--card-bg); /* #FFFFFF từ index.css */
+    --intro-section-text-dark: var(--text-dark); /* #333 từ index.css */
+    --intro-section-text-medium: var(--text-medium); /* #555 từ index.css */
+    --intro-accent-main: var(--color-orange); /* #F27405 từ index.css */
+    --intro-accent-secondary: var(--color-yellow); /* #F2B705 từ index.css */
+    --intro-section-border-light: rgba(242, 116, 5, 0.2); /* Cam trong suốt */
+    --intro-section-shadow-color: rgba(242, 116, 5, 0.1); /* Bóng đổ cam nhẹ */
 }
-.info-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-bottom: 50px;
+
+
+/* --- Section chính - Split Layout (Theme Banner Hero) --- */
+.intro-btec-split-section {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Cột trái | Cột phải */
+    grid-template-rows: auto 1fr; /* Hàng trên (cho tiêu đề) | Hàng dưới (cho nội dung chính) */
+    grid-template-areas:
+        "top-left-header-area top-right-header-area"
+        "left-main-content right-main-content";
+    background-color: var(--primary-bg); /* NỀN CHÍNH XUYÊN SUỐT - TỪ index.css */
+    color: var(--text-dark); /* Mặc định chữ màu tối */
+    overflow: hidden;
+    padding: 60px; /* Padding tổng thể cho section */
+    gap: 30px; /* Khoảng cách giữa các ô */
+    align-items: stretch; /* Đảm bảo các ô trong cùng một hàng căng đầy chiều cao */
 }
-.info-card {
-  text-align: center;
-  transition: transform 0.3s ease;
-  padding: 40px 25px; /* Tăng padding để trông thoáng hơn */
+
+/* --- Định vị các phần tử trong Grid và CĂN CHỈNH --- */
+.top-left-header-outside {
+    grid-area: top-left-header-area;
+    padding-left: 40px;
+    padding-bottom: 0px; /* ĐIỀU CHỈNH: Loại bỏ padding-bottom để căn sát đáy với text bên phải */
+    align-self: end; /* Căn chỉnh xuống cuối của hàng grid này */
 }
-.info-card:hover {
-  transform: translateY(-8px);
+
+.top-right-header-outside {
+    grid-area: top-right-header-area;
+    padding-right: 40px;
+    padding-bottom: 0px; /* ĐIỀU CHỈNH: Loại bỏ padding-bottom để căn sát đáy với text bên trái */
+    align-self: end; /* Căn chỉnh xuống cuối của hàng grid này */
 }
-.info-card img { /* Nếu có icon */
-  width: 60px;
-  height: 60px;
-  margin-bottom: 20px;
+
+.split-left-column {
+    grid-area: left-main-content;
+    position: relative;
+    background-color: var(--intro-section-card-bg); /* NỀN Ô CON - TRẮNG */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 40px;
+    text-align: left;
+    overflow: hidden;
+
+    border: 1px solid var(--intro-section-border-light);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--intro-section-shadow);
+
+    /* Ảnh nền và lớp phủ */
+    background-image: url('https://via.placeholder.com/800x600/F27405/F2B705?text=BTEC+FPT');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 0 0 1000px rgba(242, 116, 5, 0.4);
 }
-.info-card h3 {
-  font-size: 1.8em; /* To hơn một chút */
-  color: var(--color-orange); /* Màu cam tươi */
-  margin-bottom: 15px;
+
+
+.left-content-wrapper {
+    max-width: 500px;
+    z-index: 2;
+    position: relative;
 }
-.info-card p {
-  font-size: 1em;
-  color: var(--text-medium);
+
+.left-title {
+    font-size: 3em;
+    color: var(--intro-accent-main); /* MÀU CAM CHỦ ĐẠO */
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.1;
+    text-shadow: none;
 }
-.view-details-btn {
-  margin-top: 20px;
+
+.left-description {
+    font-size: 1.1em;
+    color: var(--intro-section-text-dark);
+    margin-bottom: 40px;
+    line-height: 1.6;
+    font-weight: 300;
 }
+
+.left-cta-btn {
+    background-color: var(--button-color); /* NÚT MÀU CAM TỪ index.css */
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px var(--intro-section-shadow);
+}
+
+.left-cta-btn:hover {
+    background-color: var(--button-hover-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px var(--intro-section-shadow);
+}
+
+
+/* --- Cột bên phải (Phần text trên và danh sách ngành học) --- */
+.split-right-main-column {
+    grid-area: right-main-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: var(--primary-bg);
+    padding-right: 40px;
+}
+
+
+/* --- Style cho các phần tử bên trong --- */
+.top-left-title { /* TIÊU ĐỀ "Khởi đầu vững chắc" */
+    font-size: 1.5em;
+    color: var(--intro-accent-main); /* ĐIỀU CHỈNH: MÀU CAM */
+    font-weight: 600;
+}
+.top-left-subtitle { /* NỘI DUNG PHỤ "Hành trang cho hành trình vươn xa." */
+    font-size: 1em;
+    color: var(--text-medium); /* MÀU CHỮ PHỤ */
+    margin-top: 5px; /* Khoảng cách với tiêu đề */
+}
+
+
+.top-right-title { /* TIÊU ĐỀ "Về BTEC FPT" */
+    font-size: 1.5em;
+    color: var(--intro-accent-main); /* ĐIỀU CHỈNH: MÀU CAM */
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.top-right-description {
+    font-size: 1em;
+    color: var(--text-medium);
+    line-height: 1.5;
+    max-width: 90%;
+}
+
+.program-list-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.program-list-item {
+    background-color: var(--intro-section-card-bg); /* NỀN Ô CON - TRẮNG */
+    border-radius: 10px;
+    padding: 25px 30px;
+    text-align: left;
+    text-decoration: none;
+    color: var(--intro-section-text-dark); /* CHỮ TỐI TRÊN NỀN Ô CON */
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--intro-section-shadow);
+    border: 1px solid var(--intro-section-border-light);
+
+    flex-shrink: 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.program-list-item::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(60deg, transparent 30%, var(--intro-accent-main), transparent 70%); /* MÀU CAM ĐỂ PHÁT SÁNG */
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    z-index: 0;
+}
+
+.program-list-item:hover::before {
+    opacity: 1;
+    transform: rotate(45deg) translate(25%, 25%);
+}
+
+.program-list-item:hover {
+    background-color: #fff9f0; /* Nền card sáng hơn một chút khi hover (cam rất nhạt) */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px var(--intro-section-shadow);
+    border-color: var(--intro-accent-main); /* Viền màu CAM khi hover */
+}
+
+.program-list-item h3 {
+    font-size: 1.2em;
+    color: var(--heading-color); /* Vẫn giữ xanh lá đậm cho tiêu đề từng ngành, tạo sự đa dạng */
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.program-list-item p {
+    font-size: 0.9em;
+    color: var(--intro-section-text-dark);
+    line-height: 1.4;
+    font-weight: 300;
+}
+
+
+/* --- Responsive adjustments --- */
+@media (max-width: 992px) {
+    .intro-btec-split-section {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+            "top-left-header-area"
+            "left-main-content"
+            "top-right-header-area"
+            "right-main-content";
+        padding: 40px 0;
+        gap: 20px;
+        align-items: start;
+    }
+    .top-left-header-outside,
+    .top-right-header-outside {
+        padding: 0 30px;
+        align-self: start;
+        text-align: center;
+        padding-bottom: 15px;
+    }
+    .split-left-column {
+        min-height: 300px;
+        padding: 40px 30px;
+        text-align: center;
+        margin: 0 30px;
+        justify-content: center;
+    }
+    .left-title { font-size: 2.5em; }
+    .left-description { font-size: 1em; margin-bottom: 30px; }
+    .split-right-main-column {
+        padding: 0 30px 40px;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .program-list-item { padding: 20px 25px; }
+    .program-list-item h3 { font-size: 1.1em; }
+    .program-list-item p { font-size: 0.85em; }
+}
+
 @media (max-width: 768px) {
-  .info-cards-grid {
-    grid-template-columns: 1fr;
-  }
+    .left-title { font-size: 2em; }
+    .left-description { font-size: 0.9em; }
+    .left-cta-btn { padding: 12px 25px; font-size: 1em; }
+    .top-right-title { font-size: 1.5em; }
+    .top-right-description { font-style: 0.85em; }
+    .program-list-item { padding: 15px 20px; }
+    .program-list-item h3 { font-size: 1em; }
+    .program-list-item p { font-size: 0.75em; }
 }

@@ -3,6 +3,7 @@ body {
   max-width: 100%;
   overflow-x: hidden;
   margin-top: 50px;
+
 }
 
 .hero-section {
@@ -19,7 +20,7 @@ body {
   perspective-origin: 1000px -50px;
   font-family: Arial, sans-serif;
   background: linear-gradient(90deg, rgba(250, 158, 112, 1) 10%, rgba(249, 119, 53, 1) 53%);
-  padding-left: 40px;
+  padding-left: 90px;
 }
 
 .hero-content {

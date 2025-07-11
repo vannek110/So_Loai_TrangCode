@@ -1,39 +1,65 @@
 // src/components/js/IntroBTEC.js
 import React from 'react';
 import './../../components/css/IntroBTEC.css';
-// import introIcon1 from './../../assets/intro-icon-1.png'; // Nếu bạn có icon
-// import introIcon2 from './../../assets/intro-icon-2.png';
-// import introIcon3 from './../../assets/intro-icon-3.png';
+
+const programs = [
+    {
+        name: 'Lập trình máy tính',
+        description: 'Kiến tạo TƯƠNG LAI số: Phát triển phần mềm, AI, Web, ứng dụng. Trở thành Kỹ sư phần mềm, AI Developer.',
+        link: 'https://btec.fpt.edu.vn/nganh/lap-trinh-may-tinh'
+    },
+    {
+        name: 'Quản trị kinh doanh',
+        description: 'Trở thành NHÀ LÃNG ĐẠO: Nắm vững Marketing, Tài chính, Quản lý để khởi nghiệp, điều hành doanh nghiệp hoặc chuyên gia Marketing số.',
+        link: 'https://btec.fpt.edu.vn/nganh/quan-tri-kinh-doanh'
+    },
+    {
+        name: 'Thiết kế đồ họa',
+        description: 'Biến SÁNG TẠO thành giá trị: Khám phá UI/UX, Web, nhận diện thương hiệu. Tự tin làm Designer, Art Director.',
+        link: 'https://btec.fpt.edu.vn/nganh/thiet-ke-do-hoa'
+    },
+    {
+        name: 'Kỹ thuật + Công nghệ bán dẫn',
+        description: 'Đón đầu CÔNG NGHỆ CHIP: Đi sâu vào ngành bán dẫn, thiết kế vi mạch. Trở thành Kỹ sư bán dẫn, góp phần tạo nên "trái tim" công nghệ.',
+        link: 'https://btec.fpt.edu.vn/nganh/ky-thuat-cong-nghe-ban-dan'
+    },
+];
 
 function IntroBTEC() {
-  return (
-    <section id="intro" className="intro-btec-section">
-      <div className="container">
-        <h2 className="section-title">Cách BTEC Kiến Tạo Tương Lai Sĩ Tử</h2>
-        <p className="intro-description">
-          Tại <span className="keyword">Cao đẳng quốc tế BTEC</span>, chúng tôi không ngừng đổi mới để mang đến
-          một hành trình học tập độc đáo và hiệu quả, giúp <span className="keyword">sĩ tử</span> vươn mình trong <span className="keyword">mùa hè</span> này.
-        </p>
-        <div className="info-cards-grid">
-          <div className="card-box info-card">
-            {/* <img src={introIcon1} alt="Icon Tư Duy" /> */}
-            <h3>Tư Duy Đột Phá</h3>
-            <p>Phát triển kỹ năng giải quyết vấn đề, tư duy phản biện cho một tương lai năng động.</p>
-          </div>
-          <div className="card-box info-card">
-            {/* <img src={introIcon2} alt="Icon Công Nghệ" /> */}
-            <h3>Kỹ Năng Thực Tiễn</h3>
-            <p>Học lập trình web, thiết kế đồ họa, marketing số... theo chuẩn quốc tế.</p>
-          </div>
-          <div className="card-box info-card">
-            {/* <img src={introIcon3} alt="Icon Kết Nối" /> */}
-            <h3>Hội Nhập Toàn Cầu</h3>
-            <p>Môi trường học tập đa văn hóa, mở rộng cơ hội nghề nghiệp trên phạm vi quốc tế.</p>
-          </div>
-        </div>
-        <a href="https://btec.fpt.edu.vn/" className="btn view-details-btn">Khám phá chi tiết</a>
-      </div>
-    </section>
-  );
+    return (
+        <section id="intro-split" className="intro-btec-split-section">
+            {/* PHẦN TEXT TRÊN ĐẦU BÊN PHẢI */}
+            <div className="top-right-header-outside">
+                <h3 className="top-right-title">Về BTEC FPT</h3>
+                <p className="top-right-description">
+                    Chúng tôi chuyên đào tạo các chuyên ngành công nghệ, kinh doanh và thiết kế theo chuẩn quốc tế, với trọng tâm vào ứng dụng thực tiễn và công nghệ mới nhất.
+                </p>
+            </div>
+
+            {/* CỘT BÊN TRÁI CHÍNH */}
+            <div className="split-left-column">
+                <div className="left-content-wrapper">
+                    <h2 className="left-title">Chào mừng mùa hè <br/> rực rỡ của các sĩ tử!</h2> {/* Đã thay đổi tiêu đề */}
+                    <p className="left-description">
+                        Kỳ thi quan trọng đã khép lại, cánh cửa tương lai đang rộng mở. BTEC FPT tự hào đồng hành cùng các bạn 2K7 trên hành trình khám phá tiềm năng, trang bị kiến thức và kỹ năng chuẩn quốc tế để tự tin hội nhập và bứt phá trong kỷ nguyên số.
+                    </p>
+                    <a href="https://btec.fpt.edu.vn/lien-he" className="btn left-cta-btn">Khám phá ngay</a> {/* Nút CTA điều chỉnh */}
+                </div>
+            </div>
+
+            {/* CỘT BÊN PHẢI CHỨA CÁC NGÀNH HỌC */}
+            <div className="split-right-main-column">
+                <div className="program-list-container">
+                    {programs.map((program, index) => (
+                        <a key={index} href={program.link} className="program-list-item">
+                            <h3>{program.name}</h3>
+                            <p>{program.description}</p>
+                        </a>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
 }
+
 export default IntroBTEC;
