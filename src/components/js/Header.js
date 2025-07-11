@@ -1,15 +1,40 @@
 // src/components/js/Header.js
-import React from 'react';
-import './../../components/css/Header.css'; // Đường dẫn tới CSS
-import BTECLogo from './../../assets/btec-logo.png.png'; // Logo BTEC
+
+import React, { useState, useEffect } from 'react';
+import './../../components/css/Header.css';
+import BTECLogo from './../../assets/btec-logo.png.png'; // Logo BTEC (màu cho nền sáng)
+import BTECLogoWhite from './../../assets/btec-logo.png.png'; // Logo BTEC trắng (cho nền tối khi cuộn)
 
 function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="header">
+    <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <div className="logo-section">
-          <img src={BTECLogo} alt="BTEC International College Logo" />
-          <span className="header-slogan">Nơi Tinh Hoa Hội Tụ</span>
+          <img
+            src={isScrolled ? BTECLogoWhite : BTECLogo}
+            alt="BTEC International College Logo"
+            className="btec-logo"
+          />
+          <span className="header-slogan">
+            {isScrolled ? '' : 'Nơi Tinh Hoa Hội Tụ'}
+          </span>
         </div>
         <nav className="navbar">
           <ul>
@@ -19,8 +44,10 @@ function Header() {
             <li><a href="#contact">Liên Hệ</a></li>
           </ul>
         </nav>
+        <button className="get-quote-btn">Nhận Tư Vấn</button>
       </div>
     </header>
   );
 }
+
 export default Header;

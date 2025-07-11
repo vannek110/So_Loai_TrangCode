@@ -1,33 +1,54 @@
 /* src/components/css/Header.css */
+
 .header {
-  background-color: var(--card-bg);
-  padding: 15px 0;
-  box-shadow: 0 2px 5px var(--shadow-light);
-  position: sticky;
+  position: fixed; /* Quan trọng: để Navbar dính */
   top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%; /* Mặc định chiếm 100% chiều rộng */
+  max-width: 100%; /* Đảm bảo max-width không giới hạn nó ở trạng thái ban đầu */
   z-index: 1000;
+  transition: all 0.4s ease-in-out; /* Hiệu ứng chuyển động mượt mà */
+
+
+  /* Default State (như ảnh 2) */
+  margin-top: 10;
+  background-color: var(--card-bg); /* Nền trắng/kem từ bảng màu */
+  padding: 20px 0; /* Padding lớn hơn cho trạng thái ban đầu */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px); /* Hiệu ứng mờ nền nhẹ */
+  -webkit-backdrop-filter: blur(5px);
 }
+
 .header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1400px; /* Vẫn giới hạn nội dung bên trong */
   margin: 0 auto;
   padding: 0 20px;
+  transition: padding 0.4s ease-in-out;
 }
+
+/* Logo Section */
 .logo-section {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.logo-section img {
-  height: 40px;
+.btec-logo {
+  height: 60px; /* Kích thước logo lớn hơn ở trạng thái ban đầu */
+  transition: height 0.4s ease-in-out;
 }
 .header-slogan {
-  font-size: 1.3em;
+  font-size: 1.2em; /* Kích thước slogan lớn hơn */
   font-weight: bold;
-  color: rgb(222, 128, 46);
+  color: var(--heading-color); /* Màu tiêu đề của bạn */
+  transition: font-size 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  white-space: nowrap; /* Đảm bảo slogan không xuống dòng */
 }
+
+/* Navigation Links */
 .navbar ul {
   list-style: none;
   margin: 0;
@@ -39,15 +60,176 @@
 }
 .navbar ul li a {
   text-decoration: none;
-  color: var(--text-dark);
+  color: var(--text-dark); /* Màu chữ mặc định */
   font-weight: 500;
-  transition: color 0.3s ease;
+  font-size: 1.2em;
+  transition: color 0.3s ease-in-out;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .navbar ul li a:hover {
-  color: var(--color-orange); /* Màu cam tươi khi hover */
+  color: var(--color-orange);
 }
-@media (max-width: 768px) {
-  .navbar {
-    display: none; /* Cần thêm hamburger menu cho mobile */
+
+/* Get a Quote Button */
+.get-quote-btn {
+  background-color: rgb(245, 210, 70);
+  color: var(--heading-color);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 50px; /* Bo tròn mạnh */
+  font-size: 1.0em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease-in-out;
+}
+.get-quote-btn:hover {
+  background-color: rgb(245, 149, 70);
+  color: yellow;
+}
+
+/* --- Scrolled State (khi cuộn xuống - như ảnh 1) --- */
+.header.scrolled {
+  max-width: 1300px; /* Chiều rộng tối đa khi cuộn (bạn có thể điều chỉnh) */
+  margin: 10px auto 0 auto; /* Căn giữa và cách top một chút */
+  border-radius: 50px; /* Bo tròn lại khi cuộn */
+  background-color: rgb(248, 248, 248); /* Đổi màu nền sang xanh mint/ngọc bích */
+  /* *** THAY ĐỔI Ở ĐÂY: Tăng padding dọc lên thêm *** */
+  padding: 22px 0; /* Tăng từ 15px lên 22px (thử nghiệm với các giá trị khác như 20px, 25px) */
+
+  left: 50%;
+  transform: translateX(-50%);
+  padding-left: 0;
+  padding-right: 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.header.scrolled .container {
+    padding: 0 25px;
+}
+
+.header.scrolled .btec-logo {
+  /* *** THAY ĐỔI Ở ĐÂY: Tăng kích thước logo khi cuộn để phù hợp với padding mới *** */
+  height: 40px; /* Tăng từ 35px lên 40px */
+}
+.header.scrolled .header-slogan {
+  font-size: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.header.scrolled .navbar ul li a {
+  color: rgb(39, 98, 195);
+  font-size: 1.2em;
+  transition: color 0.3s ease-in-out;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.header.scrolled .navbar ul li a:hover {
+  color: var(--color-yellow);
+}
+
+.header.scrolled .get-quote-btn {
+  background-color: rgb(245, 210, 70);
+  color: var(--heading-color);
+  padding: 12px 20px;
+  font-size: 0.85em;
+  box-shadow: none;
+}
+.header.scrolled .get-quote-btn:hover {
+  background-color: rgb(245, 149, 70);
+  color: yellow;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+  .header.scrolled {
+    max-width: 95%;
+    margin: 8px auto 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
+    /* *** THAY ĐỔI Ở ĐÂY: Tăng padding dọc cho responsive *** */
+    padding: 18px 0; /* Tăng từ 12px lên 18px (hoặc 20px tùy ý) */
   }
+  .navbar {
+    display: none;
+  }
+  .get-quote-btn {
+    padding: 10px 15px;
+    font-size: 0.9em;
+  }
+  .header-slogan {
+    display: none;
+  }
+  .btec-logo {
+    height: 40px;
+  }
+  .header.scrolled .btec-logo {
+    height: 35px; /* Tăng từ 35px lên 35px, hoặc 38px tùy ý */
+  }
+  .header.scrolled .get-quote-btn {
+    padding: 6px 12px;
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 0;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+  .header.scrolled {
+    max-width: calc(100% - 20px);
+    margin: 5px auto 0 auto;
+    /* *** THAY ĐỔI Ở ĐÂY: Tăng padding dọc cho mobile *** */
+    padding: 15px 0; /* Tăng từ 10px lên 15px (hoặc 18px tùy ý) */
+    border-radius: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .header .container {
+    padding: 0 15px;
+  }
+  .btec-logo {
+    height: 35px;
+  }
+  .header.scrolled .btec-logo {
+    height: 30px; /* Tăng từ 30px lên 30px, hoặc 33px tùy ý */
+  }
+}
+
+@media (max-width: 576px) {
+    .header {
+        padding: 10px 0;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    .header.scrolled {
+        max-width: calc(100% - 10px);
+        margin: 5px auto 0 auto;
+        /* *** THAY ĐỔI Ở ĐÂY: Tăng padding dọc cho mobile nhỏ *** */
+        padding: 12px 0; /* Tăng từ 8px lên 12px (hoặc 10px tùy ý) */
+        border-radius: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .header .container {
+        padding: 0 10px;
+    }
+    .btec-logo {
+        height: 30px;
+    }
+    .header.scrolled .btec-logo {
+        height: 25px; /* Tăng từ 25px lên 25px, hoặc 28px tùy ý */
+    }
+    .get-quote-btn {
+        padding: 6px 10px;
+        font-size: 0.75em;
+    }
+    .header.scrolled .get-quote-btn {
+        padding: 4px 8px;
+        font-size: 0.7em;
+    }
 }
