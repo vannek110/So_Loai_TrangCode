@@ -20,7 +20,7 @@ body {
   perspective-origin: 1000px -50px;
   font-family: Arial, sans-serif;
   background: linear-gradient(90deg, rgba(250, 158, 112, 1) 10%, rgba(249, 119, 53, 1) 53%);
-  padding-left: 90px;
+  padding-left: 30px;
 }
 
 .hero-content {
@@ -36,7 +36,7 @@ body {
   font-family: "Comforter", cursive;
   font-weight: 599;
   font-style: normal;
-  font-size: 5.5em;
+  font-size: 5em;
   margin-bottom: 20px;
   line-height: 1.2;
   color: rgb(251, 249, 248);
@@ -44,7 +44,7 @@ body {
 }
 
 .slogan-text {
-  font-size: 1.4em;
+  font-size: 1.2em;
   margin-bottom: 20px;
   color: white;
   font-weight: bold;

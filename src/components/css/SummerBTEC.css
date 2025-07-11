@@ -1,0 +1,125 @@
+/* src/components/css/SummerAtBTEC.css */
+
+.summer-at-btec-section {
+  padding: 80px 0;
+  background-color: var(--primary-bg); /* Hoặc một màu khác từ bảng màu của bạn */
+  text-align: center;
+}
+
+.summer-at-btec-section .section-title {
+  font-size: 2.8em;
+  color: var(--heading-color); /* Xanh lá đậm */
+  margin-bottom: 20px;
+}
+
+.summer-description {
+  font-size: 1.15em;
+  color: var(--text-medium);
+  margin-bottom: 50px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.summer-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 cột trên desktop */
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 50px auto;
+  padding: 0 20px;
+}
+
+.highlight-item {
+  background-color: var(--card-bg); /* Nền trắng */
+  box-shadow: 0 4px 15px var(--shadow-light); /* Đổ bóng nhẹ */
+  border-radius: 12px;
+  border: 1px solid rgba(var(--color-green-dark), 0.1);
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, border-color 0.3s ease-out;
+}
+
+.highlight-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    border-color: var(--color-mint);
+}
+
+.highlight-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.highlight-item h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--color-orange); /* Cam tươi */
+  margin-bottom: 10px;
+}
+
+.highlight-item p {
+  font-size: 0.95em;
+  color: var(--text-medium);
+  line-height: 1.6;
+  flex-grow: 1; /* Để p chiếm hết không gian còn lại */
+}
+
+.summer-outro {
+  font-size: 1.2em;
+  color: var(--text-dark); /* Xám đậm */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
+  .summer-highlights-grid {
+    grid-template-columns: repeat(2, minmax(280px, 1fr)); /* 2 cột trên tablet */
+    gap: 25px;
+  }
+  .highlight-item {
+    padding: 25px;
+  }
+  .highlight-image {
+    height: 180px;
+  }
+  .highlight-item h3 {
+    font-size: 1.3em;
+  }
+  .highlight-item p {
+    font-size: 0.9em;
+  }
+  .summer-outro {
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 600px) {
+  .summer-highlights-grid {
+    grid-template-columns: 1fr; /* 1 cột trên mobile */
+    gap: 20px;
+  }
+  .highlight-item {
+    padding: 20px;
+  }
+  .highlight-image {
+    height: 160px;
+  }
+  .highlight-item h3 {
+    font-size: 1.2em;
+  }
+  .highlight-item p {
+    font-size: 0.85em;
+  }
+  .summer-outro {
+    font-size: 1em;
+  }
+}

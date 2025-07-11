@@ -8,6 +8,7 @@ import Header from './components/js/Header';
 import HeroSection from './components/js/HeroSection';
 import IntroBTEC from './components/js/IntroBTEC';
 import MidSectionImageText from './components/js/MidSectionImageText';
+import SummerBTEC from './components/js/SummerBTEC';
 import SmallCardsSection from './components/js/SmallCardsSection';
 import InspirationGallery from './components/js/InspirationGallery';
 import ContactSection from './components/js/ContactSection';
@@ -41,6 +42,7 @@ function App() {
           isReversed={false}
         />
         <SmallCardsSection />
+        <SummerBTEC />
         <MidSectionImageText
           image={ancientWisdomImg}
           title="Giá Trị Cổ Truyền – Nền Tảng Vững Chắc"
