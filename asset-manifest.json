@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/So_Loai_TrangCode/static/css/main.86017d8a.css",
-    "main.js": "/So_Loai_TrangCode/static/js/main.c4bc68af.js",
+    "main.js": "/So_Loai_TrangCode/static/js/main.1a19111b.js",
     "static/js/453.670e15c7.chunk.js": "/So_Loai_TrangCode/static/js/453.670e15c7.chunk.js",
     "static/media/anh19.png": "/So_Loai_TrangCode/static/media/anh19.cf04945b83ed2aefa8cf.png",
     "static/media/anh13.jpg": "/So_Loai_TrangCode/static/media/anh13.812bb4f3fd2b7d332b85.jpg",
@@ -12,7 +12,6 @@
     "static/media/anh17.jpg": "/So_Loai_TrangCode/static/media/anh17.fffe7924e5a50996da90.jpg",
     "static/media/anh11.jpg": "/So_Loai_TrangCode/static/media/anh11.a518b51cdfe32bde0710.jpg",
     "static/media/anh10.jpg": "/So_Loai_TrangCode/static/media/anh10.bce0e3e797a7ef871d71.jpg",
-    "static/media/student-success.png": "/So_Loai_TrangCode/static/media/student-success.c325b815b7bbeed196bf.png",
     "static/media/anh1.jpg": "/So_Loai_TrangCode/static/media/anh1.2e2009c00085476fc517.jpg",
     "static/media/anh18.jpg": "/So_Loai_TrangCode/static/media/anh18.986bd4b37b99caad7bd6.jpg",
     "static/media/anh4.webp": "/So_Loai_TrangCode/static/media/anh4.b9595ff8b84e117fc1c3.webp",
@@ -27,17 +26,18 @@
     "static/media/anh6.webp": "/So_Loai_TrangCode/static/media/anh6.b3cebd8834e5551fe973.webp",
     "static/media/hero-bg.jpg": "/So_Loai_TrangCode/static/media/hero-bg.aeb33b684235cee966a9.jpg",
     "static/media/anh3.webp": "/So_Loai_TrangCode/static/media/anh3.7e633f42084e3189e66d.webp",
+    "static/media/anh20.webp": "/So_Loai_TrangCode/static/media/anh20.3d6fc7c59f7de9d0a521.webp",
     "static/media/anh7.webp": "/So_Loai_TrangCode/static/media/anh7.3c3bd8ad7a19dbde4317.webp",
     "static/media/gallery-img-1.jpg": "/So_Loai_TrangCode/static/media/gallery-img-1.0d948336b638dd17a425.jpg",
     "static/media/small-card-icon-3.jpg": "/So_Loai_TrangCode/static/media/small-card-icon-3.f3ee5dc7d8b9da4f66ea.jpg",
     "static/media/btec-logo.png.png": "/So_Loai_TrangCode/static/media/btec-logo.png.017d8deed024e76951f1.png",
     "index.html": "/So_Loai_TrangCode/index.html",
     "main.86017d8a.css.map": "/So_Loai_TrangCode/static/css/main.86017d8a.css.map",
-    "main.c4bc68af.js.map": "/So_Loai_TrangCode/static/js/main.c4bc68af.js.map",
+    "main.1a19111b.js.map": "/So_Loai_TrangCode/static/js/main.1a19111b.js.map",
     "453.670e15c7.chunk.js.map": "/So_Loai_TrangCode/static/js/453.670e15c7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.86017d8a.css",
-    "static/js/main.c4bc68af.js"
+    "static/js/main.1a19111b.js"
   ]
 }
