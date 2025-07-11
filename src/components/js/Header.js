@@ -1,26 +1,17 @@
-// src/components/js/Header.js
-
 import React, { useState, useEffect } from 'react';
 import './../../components/css/Header.css';
-import BTECLogo from './../../assets/btec-logo.png.png'; // Logo BTEC (màu cho nền sáng)
-import BTECLogoWhite from './../../assets/btec-logo.png.png'; // Logo BTEC trắng (cho nền tối khi cuộn)
+import BTECLogo from './../../assets/btec-logo.png.png';
+import BTECLogoWhite from './../../assets/btec-logo.png.png';
 
-function Header() {
+function Header({ onChatToggle }) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
@@ -29,7 +20,7 @@ function Header() {
         <div className="logo-section">
           <img
             src={isScrolled ? BTECLogoWhite : BTECLogo}
-            alt="BTEC International College Logo"
+            alt="BTEC Logo"
             className="btec-logo"
           />
         </div>
@@ -41,7 +32,11 @@ function Header() {
             <li><a href="#contact">Liên Hệ</a></li>
           </ul>
         </nav>
-        <button className="get-quote-btn">Nhận Tư Vấn</button>
+
+        {/* Nút Nhận Tư Vấn gọi chatbot */}
+        <button className="get-quote-btn" onClick={onChatToggle}>
+          Nhận Tư Vấn
+        </button>
       </div>
     </header>
   );
