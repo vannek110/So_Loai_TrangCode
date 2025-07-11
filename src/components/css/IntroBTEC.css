@@ -83,10 +83,10 @@
 }
 
 .left-title {
-    font-size: 3em;
+    font-size: 2.3em;
     color: var(--intro-accent-main); /* MÀU CAM CHỦ ĐẠO */
     margin-bottom: 20px;
-    font-weight: 700;
+    font-weight: 650; /* ĐIỀU CHỈNH: Tăng độ đậm của tiêu đề */
     line-height: 1.1;
     text-shadow: none;
 }
