@@ -63,7 +63,7 @@
   text-decoration: none;
   color: var(--text-dark); /* Màu chữ mặc định */
   font-weight: 500;
-  font-size: 1em;
+  font-size: 20px;
   transition: color 0.3s ease-in-out;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
