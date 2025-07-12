@@ -33,6 +33,7 @@ function App() {
       <main>
         <HeroSection />
         <IntroBTEC />
+        <SummerBTEC />
         <MidSectionImageText
           image={summerVibesImg}
           title="Chào Hè Rực Rỡ Cùng BTEC!"
@@ -42,7 +43,6 @@ function App() {
           isReversed={false}
         />
         <SmallCardsSection />
-        <SummerBTEC />
         <MidSectionImageText
           image={ancientWisdomImg}
           title="Giá Trị Cổ Truyền – Nền Tảng Vững Chắc"

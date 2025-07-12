@@ -62,7 +62,7 @@
   text-decoration: none;
   color: var(--text-dark); /* Màu chữ mặc định */
   font-weight: 500;
-  font-size: 1.2em;
+  font-size: 1em;
   transition: color 0.3s ease-in-out;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
@@ -75,7 +75,7 @@
   background-color: rgb(249, 119, 53);
   color: rgb(255, 255, 255);
   border: none;
-  padding: 12px 25px;
+  padding: 8px 18px;
   border-radius: 50px; /* Bo tròn mạnh */
   font-size: 1.0em;
   font-weight: bold;
@@ -95,7 +95,7 @@
   border-radius: 50px; /* Bo tròn lại khi cuộn */
   background-color: rgb(248, 248, 248); /* Đổi màu nền sang xanh mint/ngọc bích */
   /* *** THAY ĐỔI Ở ĐÂY: Tăng padding dọc lên thêm *** */
-  padding: 22px 0; /* Tăng từ 15px lên 22px (thử nghiệm với các giá trị khác như 20px, 25px) */
+  padding: 16px 0; /* Tăng từ 15px lên 22px (thử nghiệm với các giá trị khác như 20px, 25px) */
 
   left: 50%;
   transform: translateX(-50%);
@@ -122,7 +122,7 @@
 
 .header.scrolled .navbar ul li a {
   color: rgb(0, 0, 0);
-  font-size: 1.2em;
+  font-size: 1em;
   transition: color 0.3s ease-in-out;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
@@ -134,7 +134,7 @@
   background-color: rgb(249, 119, 53);
   color: rgb(255, 255, 255);
   padding: 12px 20px;
-  font-size: 0.85em;
+  font-size: 0.8em;
   box-shadow: none;
 }
 .header.scrolled .get-quote-btn:hover {

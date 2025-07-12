@@ -208,7 +208,7 @@
     background-color: #fff9f0; /* Nền card sáng hơn một chút khi hover (cam rất nhạt) */
     transform: translateY(-3px);
     box-shadow: 0 8px 25px var(--intro-section-shadow);
-    border-color: var(--intro-accent-main); /* Viền màu CAM khi hover */
+    border-color: var(--intro-accent-main); 
 }
 
 .program-list-item h3 {
@@ -223,6 +223,7 @@
     color: var(--intro-section-text-dark);
     line-height: 1.4;
     font-weight: 300;
+    font-family:Arial, Helvetica, sans-serif; /* Đảm bảo sử dụng font Poppins */
 }
 
 
