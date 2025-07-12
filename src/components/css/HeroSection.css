@@ -3,8 +3,17 @@ body {
   max-width: 100%;
   overflow-x: hidden;
   margin-top: 50px;
-
+  scroll-behavior: smooth;
 }
+
+#summer {
+  scroll-margin-top: 40px;  /* Cho phần “Mùa hè BTEC” */
+}
+
+#contact {
+  scroll-margin-top: 40px;  /* Cho phần “Giới thiệu trường” */
+}
+
 
 .hero-section {
   position: relative;
@@ -28,7 +37,8 @@ body {
   z-index: 2;
   max-width: 600px;
   padding: 20px;
-  text-align: center; /* Cho cân trái nếu cần */
+  text-align: center;
+  /* Cho cân trái nếu cần */
 }
 
 
@@ -53,7 +63,8 @@ body {
 
 .keywords-highlight {
   font-size: 1em;
-  margin-top: 10px; /* thêm dòng này */
+  margin-top: 10px;
+  /* thêm dòng này */
   margin-bottom: 40px;
   font-weight: bold;
   color: white;
@@ -123,15 +134,34 @@ a.hero-btn {
 
 @media (max-width: 768px) {
   .hero-content h1 {
-    font-size: 2.5em;
+    font-size: 5em;  /* Tăng kích thước lớn hơn desktop */
+    line-height: 1.1;
   }
 
-  .slogan-text,
+  .slogan-text {
+    font-size: 1.3em;
+  }
+
   .keywords-highlight {
-    font-size: 1em;
+    font-size: 1.2em;
+  }
+
+  .hero-btn {
+    font-size: 1.3em;
+    padding: 18px 45px;
   }
 
   .carousel-container {
     display: none;
   }
 }
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 50vh;
+    padding-left: 15px;
+    align-items: flex-start;
+    padding-top: 120px;
+  }
+}
+

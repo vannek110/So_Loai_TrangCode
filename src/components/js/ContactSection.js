@@ -1,8 +1,8 @@
 // src/components/js/ContactSection.js
 
-import React, { useState } from 'react'; // Import useState để quản lý form
+import React, { useState, useEffect } from 'react';
 import './../../components/css/ContactSection.css';
-import Stepper, { Step } from './Stepper'; // Import Stepper và Step components của bạn
+import Stepper, { Step } from './Stepper';
 
 function ContactSection() {
   const [formData, setFormData] = useState({
@@ -13,6 +13,8 @@ function ContactSection() {
     message: ''
   });
 
+  const [showToast, setShowToast] = useState(false);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -20,9 +22,19 @@ function ContactSection() {
 
   const handleFinalStepCompleted = () => {
     console.log("All steps completed! Form Data:", formData);
-    alert('Cảm ơn bạn đã đăng ký tư vấn! Chúng tôi sẽ liên hệ lại sớm.');
-    // Ở đây, bạn có thể gửi dữ liệu formData lên server
-    // Ví dụ: fetch('/api/submit-form', { method: 'POST', body: JSON.stringify(formData) });
+    setShowToast(true);
+
+    // Ẩn toast sau 4 giây
+    setTimeout(() => {
+      setShowToast(false);
+    }, 4000);
+
+    // Gửi dữ liệu lên server nếu cần
+    // fetch('/api/submit-form', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify(formData)
+    // });
   };
 
   return (
@@ -35,8 +47,7 @@ function ContactSection() {
           Hãy đăng ký tư vấn để chúng tôi liên hệ và hỗ trợ bạn.
         </p>
 
-        {/* --- TÍCH HỢP STEPPER VÀO ĐÂY --- */}
-        <div className="contact-stepper-wrapper card-box"> {/* Wrapper để Stepper có khung nếu cần */}
+        <div className="contact-stepper-wrapper card-box">
           <Stepper
             initialStep={1}
             onStepChange={(step) => {
@@ -46,7 +57,6 @@ function ContactSection() {
             backButtonText="Quay lại"
             nextButtonText="Tiếp tục"
           >
-            {/* Bước 1: Thông tin liên hệ cơ bản */}
             <Step>
               <h3>Thông Tin Cơ Bản</h3>
               <p>Vui lòng điền thông tin để chúng tôi có thể liên hệ với bạn.</p>
@@ -87,7 +97,6 @@ function ContactSection() {
               </div>
             </Step>
 
-            {/* Bước 2: Ngành học quan tâm */}
             <Step>
               <h3>Ngành Học Quan Tâm</h3>
               <p>Bạn quan tâm đến ngành nào tại BTEC?</p>
@@ -121,7 +130,6 @@ function ContactSection() {
               </div>
             </Step>
 
-            {/* Bước 3: Xác nhận */}
             <Step>
               <h3>Xác Nhận Thông Tin</h3>
               <p>Vui lòng kiểm tra lại thông tin trước khi gửi:</p>
@@ -136,7 +144,14 @@ function ContactSection() {
             </Step>
           </Stepper>
         </div>
-        {/* --- KẾT THÚC STEPPER --- */}
+
+        {showToast && (
+          <div className="custom-toast-center">
+            <div className="toast-icon">✔</div>
+            <p>Đăng ký tư vấn thành công! Chúng tôi sẽ liên hệ với bạn sớm.</p>
+          </div>
+        )}
+
         <p className="contact-note">
           Chúng tôi cam kết bảo mật thông tin cá nhân của bạn. Mọi thông tin sẽ được sử dụng chỉ để liên hệ và tư vấn.
         </p>

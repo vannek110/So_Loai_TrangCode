@@ -23,7 +23,6 @@ function InspirationGallery() {
           <div className="gallery-images">
             <img src={galleryImg1} alt="BTEC Student Life 1" className="gallery-img top-left" />
             <img src={galleryImg2} alt="BTEC Student Life 2" className="gallery-img bottom-left" />
-            <div className="color-circle" style={{ backgroundColor: 'var(--color-mint)' }}></div> {/* Vòng tròn màu xanh mint */}
             <img src={galleryImg3} alt="BTEC Student Life 3" className="gallery-img right" />
           </div>
         </div>

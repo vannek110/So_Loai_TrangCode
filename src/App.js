@@ -13,23 +13,28 @@ import SmallCardsSection from './components/js/SmallCardsSection';
 import InspirationGallery from './components/js/InspirationGallery';
 import ContactSection from './components/js/ContactSection';
 import Footer from './components/js/Footer';
-import ChatBot from './components/js/ChatBot'; // Thêm dòng này
+import ChatBot from './components/js/ChatBot';
 
 // Import assets
 import summerVibesImg from './assets/mid-section-img-1.jpg';
 import ancientWisdomImg from './assets/mid-section-img-2.jpg';
 
 function App() {
-  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [showChatBot, setShowChatBot] = useState(false); // Mặc định không hiển thị
 
   const handleChatToggle = () => {
-    setIsChatOpen(true);
+    setShowChatBot(true); // Mở chatbot khi bấm nút tư vấn
+  };
+
+  const handleChatClose = () => {
+    setShowChatBot(false); // Đóng chatbot
   };
 
   return (
     <div className="App">
       <MouseTrail />
-      <Header onChatToggle={handleChatToggle} /> {/* Truyền props vào Header */}
+      <Header onChatToggle={handleChatToggle} />
+
       <main>
         <HeroSection />
         <IntroBTEC />
@@ -54,8 +59,11 @@ function App() {
         <InspirationGallery />
         <ContactSection />
       </main>
+
       <Footer />
-      <ChatBot isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} /> {/* Chatbot hiển thị cuối trang */}
+
+      {/* Chỉ hiển thị ChatBot khi showChatBot = true */}
+      {showChatBot && <ChatBot onClose={handleChatClose} />}
     </div>
   );
 }

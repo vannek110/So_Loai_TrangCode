@@ -1,60 +1,72 @@
 /* src/components/css/IntroBTEC.css */
 
-/* --- Import Google Font: Poppins --- */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-/* --- Áp dụng font cho toàn bộ trang hoặc cho section này --- */
+/* Áp dụng font cho toàn bộ trang */
 .intro-btec-split-section * {
-    font-family: 'Poppins', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* --- Định nghĩa biến CSS RIÊNG cho IntroBTEC (Theme từ Banner Hero) --- */
+/* Biến CSS riêng cho phần IntroBTEC */
 :root {
-    --intro-section-card-bg: var(--card-bg); /* #FFFFFF từ index.css */
-    --intro-section-text-dark: var(--text-dark); /* #333 từ index.css */
-    --intro-section-text-medium: var(--text-medium); /* #555 từ index.css */
-    --intro-accent-main: var(--color-orange); /* #F27405 từ index.css */
-    --intro-accent-secondary: var(--color-yellow); /* #F2B705 từ index.css */
-    --intro-section-border-light: rgba(242, 116, 5, 0.2); /* Cam trong suốt */
-    --intro-section-shadow-color: rgba(242, 116, 5, 0.1); /* Bóng đổ cam nhẹ */
+    --intro-section-card-bg: var(--card-bg);
+    --intro-section-text-dark: var(--text-dark);
+    --intro-section-text-medium: var(--text-medium);
+    --intro-accent-main: var(--color-orange);
+    --intro-accent-secondary: var(--color-yellow);
+    --intro-section-border-light: rgba(242, 116, 5, 0.2);
+    --intro-section-shadow-color: rgba(242, 116, 5, 0.1);
 }
 
+.btn:hover {
+    text-decoration: none;
+}
 
-/* --- Section chính - Split Layout (Theme Banner Hero) --- */
 .intro-btec-split-section {
     display: grid;
-    grid-template-columns: 1fr 1.5fr; /* Cột trái | Cột phải */
-    grid-template-rows: auto 1fr; /* Hàng trên (cho tiêu đề) | Hàng dưới (cho nội dung chính) */
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
     grid-template-areas:
-        "top-left-header-area top-right-header-area"
-        "left-main-content right-main-content";
-    background-color: var(--primary-bg); /* NỀN CHÍNH XUYÊN SUỐT - TỪ index.css */
-    color: var(--text-dark); /* Mặc định chữ màu tối */
+        "top-right-header-area top-right-header-area"
+        "left-main-content right-main-content"
+        ". .";
+    background-color: var(--primary-bg);
+    color: var(--text-dark);
     overflow: hidden;
-    padding: 60px; /* Padding tổng thể cho section */
-    gap: 30px; /* Khoảng cách giữa các ô */
-    align-items: stretch; /* Đảm bảo các ô trong cùng một hàng căng đầy chiều cao */
+    padding: 60px 30px;
+    gap: 30px;
+    align-items: stretch;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* --- Định vị các phần tử trong Grid và CĂN CHỈNH --- */
-.top-left-header-outside {
-    grid-area: top-left-header-area;
-    padding-left: 40px;
-    padding-bottom: 0px; /* ĐIỀU CHỈNH: Loại bỏ padding-bottom để căn sát đáy với text bên phải */
-    align-self: end; /* Căn chỉnh xuống cuối của hàng grid này */
-}
-
-.top-right-header-outside {
+/* NEW: responsive wrapper cho phần tiêu đề */
+.top-header-area {
     grid-area: top-right-header-area;
-    padding-right: 40px;
-    padding-bottom: 0px; /* ĐIỀU CHỈNH: Loại bỏ padding-bottom để căn sát đáy với text bên trái */
-    align-self: end; /* Căn chỉnh xuống cuối của hàng grid này */
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.top-header-inner {
+    max-width: 100%;
+    padding: 0 15px;
+}
+
+/* Định vị phần tử khác */
+.left-cta-btn.secondary {
+    margin-top: 15px;
+    background-color: var(--intro-accent-secondary);
+    color: #333;
+}
+
+.left-cta-btn.secondary:hover {
+    background-color: #f8c847;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px var(--intro-section-shadow);
 }
 
 .split-left-column {
     grid-area: left-main-content;
     position: relative;
-    background-color: var(--intro-section-card-bg); /* NỀN Ô CON - TRẮNG */
+    background-color: var(--intro-section-card-bg);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -62,12 +74,9 @@
     padding: 60px 40px;
     text-align: left;
     overflow: hidden;
-
     border: 1px solid var(--intro-section-border-light);
     border-radius: 10px;
     box-shadow: 0 4px 15px var(--intro-section-shadow);
-
-    /* Ảnh nền và lớp phủ */
     background-image: url('https://via.placeholder.com/800x600/F27405/F2B705?text=BTEC+FPT');
     background-size: cover;
     background-position: center center;
@@ -75,18 +84,17 @@
     box-shadow: inset 0 0 0 1000px rgba(242, 116, 5, 0.4);
 }
 
-
 .left-content-wrapper {
-    max-width: 500px;
+    max-width: auto;
     z-index: 2;
     position: relative;
 }
 
 .left-title {
     font-size: 2.3em;
-    color: var(--intro-accent-main); /* MÀU CAM CHỦ ĐẠO */
+    color: var(--intro-accent-main);
     margin-bottom: 20px;
-    font-weight: 650; /* ĐIỀU CHỈNH: Tăng độ đậm của tiêu đề */
+    font-weight: 650;
     line-height: 1.1;
     text-shadow: none;
 }
@@ -100,7 +108,7 @@
 }
 
 .left-cta-btn {
-    background-color: var(--button-color); /* NÚT MÀU CAM TỪ index.css */
+    background-color: var(--button-color);
     color: #fff;
     border: none;
     padding: 15px 40px;
@@ -110,16 +118,18 @@
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 5px 20px var(--intro-section-shadow);
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
 }
 
 .left-cta-btn:hover {
     background-color: var(--button-hover-color);
     transform: translateY(-3px);
     box-shadow: 0 8px 25px var(--intro-section-shadow);
+    text-decoration: none;
 }
 
-
-/* --- Cột bên phải (Phần text trên và danh sách ngành học) --- */
 .split-right-main-column {
     grid-area: right-main-content;
     display: flex;
@@ -127,35 +137,17 @@
     justify-content: flex-start;
     align-items: flex-start;
     background-color: var(--primary-bg);
-    padding-right: 40px;
 }
 
-
-/* --- Style cho các phần tử bên trong --- */
-.top-left-title { /* TIÊU ĐỀ "Khởi đầu vững chắc" */
-    font-size: 1.5em;
-    color: var(--intro-accent-main); /* ĐIỀU CHỈNH: MÀU CAM */
-    font-weight: 600;
-}
-.top-left-subtitle { /* NỘI DUNG PHỤ "Hành trang cho hành trình vươn xa." */
-    font-size: 1em;
-    color: var(--text-medium); /* MÀU CHỮ PHỤ */
-    margin-top: 5px; /* Khoảng cách với tiêu đề */
-}
-
-
-.top-right-title { /* TIÊU ĐỀ "Về BTEC FPT" */
-    font-size: 1.5em;
-    color: var(--intro-accent-main); /* ĐIỀU CHỈNH: MÀU CAM */
-    margin-bottom: 10px;
+/* Style các phần tử con */
+.top-right-title {
+    font-family: Arial, sans-serif;
+    font-size: 3em;
+    color: var(--color-green-dark);
+    padding-top: 55px;
     font-weight: 700;
-}
-
-.top-right-description {
-    font-size: 1em;
-    color: var(--text-medium);
-    line-height: 1.5;
-    max-width: 90%;
+    display: block;
+    margin: 0 auto;
 }
 
 .program-list-container {
@@ -163,21 +155,21 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    margin-top: 10px;
 }
 
 .program-list-item {
-    background-color: var(--intro-section-card-bg); /* NỀN Ô CON - TRẮNG */
+    background-color: var(--intro-section-card-bg);
     border-radius: 10px;
     padding: 25px 30px;
     text-align: left;
     text-decoration: none;
-    color: var(--intro-section-text-dark); /* CHỮ TỐI TRÊN NỀN Ô CON */
+    color: var(--intro-section-text-dark);
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px var(--intro-section-shadow);
     border: 1px solid var(--intro-section-border-light);
-
     flex-shrink: 0;
     flex-grow: 1;
     display: flex;
@@ -192,7 +184,7 @@
     left: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(60deg, transparent 30%, var(--intro-accent-main), transparent 70%); /* MÀU CAM ĐỂ PHÁT SÁNG */
+    background: linear-gradient(60deg, transparent 30%, var(--intro-accent-main), transparent 70%);
     transform: rotate(45deg);
     opacity: 0;
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
@@ -205,15 +197,18 @@
 }
 
 .program-list-item:hover {
-    background-color: #fff9f0; /* Nền card sáng hơn một chút khi hover (cam rất nhạt) */
+    background-color: #fff9f0;
     transform: translateY(-3px);
     box-shadow: 0 8px 25px var(--intro-section-shadow);
+    border-color: var(--intro-accent-main);
+    text-decoration: none;
     border-color: var(--intro-accent-main); 
+    text-decoration: none;
 }
 
 .program-list-item h3 {
     font-size: 1.2em;
-    color: var(--heading-color); /* Vẫn giữ xanh lá đậm cho tiêu đề từng ngành, tạo sự đa dạng */
+    color: var(--heading-color);
     margin-bottom: 5px;
     font-weight: 600;
 }
@@ -226,54 +221,73 @@
     font-family:Arial, Helvetica, sans-serif; /* Đảm bảo sử dụng font Poppins */
 }
 
-
-/* --- Responsive adjustments --- */
+/* Responsive */
 @media (max-width: 992px) {
     .intro-btec-split-section {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto auto auto;
         grid-template-areas:
-            "top-left-header-area"
-            "left-main-content"
             "top-right-header-area"
+            "left-main-content"
             "right-main-content";
-        padding: 40px 0;
-        gap: 20px;
-        align-items: start;
+        padding: 40px 20px;
     }
-    .top-left-header-outside,
-    .top-right-header-outside {
-        padding: 0 30px;
-        align-self: start;
-        text-align: center;
-        padding-bottom: 15px;
+
+    .top-right-title {
+        font-size: 2.2em;
+        padding: 0 10px;
+        line-height: 1.3;
     }
+
     .split-left-column {
-        min-height: 300px;
-        padding: 40px 30px;
+        padding: 40px 20px;
         text-align: center;
-        margin: 0 30px;
         justify-content: center;
     }
-    .left-title { font-size: 2.5em; }
-    .left-description { font-size: 1em; margin-bottom: 30px; }
-    .split-right-main-column {
-        padding: 0 30px 40px;
-        align-items: center;
-        justify-content: flex-start;
+
+    .left-title {
+        font-size: 2.4em;
     }
-    .program-list-item { padding: 20px 25px; }
-    .program-list-item h3 { font-size: 1.1em; }
-    .program-list-item p { font-size: 0.85em; }
+
+    .left-description {
+        font-size: 1em;
+        margin-bottom: 30px;
+    }
+
+    .split-right-main-column {
+        padding: 0 10px 40px;
+        align-items: center;
+    }
 }
 
 @media (max-width: 768px) {
-    .left-title { font-size: 2em; }
-    .left-description { font-size: 0.9em; }
-    .left-cta-btn { padding: 12px 25px; font-size: 1em; }
-    .top-right-title { font-size: 1.5em; }
-    .top-right-description { font-style: 0.85em; }
-    .program-list-item { padding: 15px 20px; }
-    .program-list-item h3 { font-size: 1em; }
-    .program-list-item p { font-size: 0.75em; }
+    .top-right-title {
+        font-size: 1.8em;
+    }
+
+    .left-title {
+        font-size: 2em;
+    }
+
+    .left-description {
+        font-size: 0.9em;
+    }
+
+    .program-list-item h3 {
+        font-size: 1em;
+    }
+
+    .program-list-item p {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .left-title {
+        font-size: 3em;
+    }
+
+    .left-description {
+        font-size: 1.3em;
+    }
 }

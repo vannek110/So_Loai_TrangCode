@@ -27,23 +27,23 @@ const programs = [
 
 function IntroBTEC() {
     return (
-        <section id="intro-split" className="intro-btec-split-section">
+        <section id="intro-split" className="intro-btec-split-section offset-anchor">
+
             {/* PHẦN TEXT TRÊN ĐẦU BÊN PHẢI */}
-            <div className="top-right-header-outside">
-                <h3 className="top-right-title">Về BTEC FPT</h3>
-                <p className="top-right-description">
-                    Chúng tôi chuyên đào tạo các chuyên ngành công nghệ, kinh doanh và thiết kế theo chuẩn quốc tế, với trọng tâm vào ứng dụng thực tiễn và công nghệ mới nhất.
-                </p>
+            <div className="top-header-area">
+                <h3 className="top-right-title">Các ngành học tại BTEC FPT</h3>
             </div>
+
 
             {/* CỘT BÊN TRÁI CHÍNH */}
             <div className="split-left-column">
                 <div className="left-content-wrapper">
-                    <h2 className="left-title">Chào mừng mùa hè <br/> rực rỡ của các sĩ tử!</h2> {/* Đã thay đổi tiêu đề */}
+                    <h2 className="left-title">Chào mừng mùa hè rực rỡ của các sĩ tử!</h2> {/* Đã thay đổi tiêu đề */}
                     <p className="left-description">
                         Kỳ thi quan trọng đã khép lại, cánh cửa tương lai đang rộng mở. BTEC FPT tự hào đồng hành cùng các bạn 2K7 trên hành trình khám phá tiềm năng, trang bị kiến thức và kỹ năng chuẩn quốc tế để tự tin hội nhập và bứt phá trong kỷ nguyên số.
                     </p>
                     <a href="https://btec.fpt.edu.vn/lien-he" className="btn left-cta-btn">Khám phá ngay</a> {/* Nút CTA điều chỉnh */}
+                    <a href="https://btec.fpt.edu.vn/trac-nghiem-nghe-nghiep/" className="btn left-cta-btn">Trắc nghiệm nghề nghiệp</a>
                 </div>
             </div>
 
