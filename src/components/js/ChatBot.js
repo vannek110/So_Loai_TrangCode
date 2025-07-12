@@ -112,7 +112,7 @@ const ChatBot = ({ onClose }) => {
 
             <div>
               <button className="minimize-btn" onClick={() => setIsMinimized(true)}>−</button>
-              <button className="close-btn" onClick={onClose}>×</button>
+              {/* <button className="close-btn" onClick={onClose}>×</button> */}
             </div>
           </div>
 
