@@ -6,31 +6,29 @@ body {
   scroll-behavior: smooth;
 }
 
-#summer,
+#summer {
+  scroll-margin-top: 40px; /* Cho phần “Mùa hè BTEC” */
+}
+
 #contact {
-  scroll-margin-top: 40px;
-  /* overflow: initial !important; */
+  scroll-margin-top: 40px; /* Cho phần “Giới thiệu trường” */
 }
 
 .hero-section {
   position: relative;
-  height: 80vh;
+  min-height: 80vh; /* Ensure minimum height for larger screens */
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  text-align: center;
   color: white;
   perspective: 2600px;
   perspective-origin: 1000px -50px;
   font-family: Arial, sans-serif;
-  background: linear-gradient(
-    90deg,
-    rgba(250, 158, 112, 1) 10%,
-    rgba(249, 119, 53, 1) 53%
-  );
+  background: linear-gradient(90deg, rgba(250, 158, 112, 1) 10%, rgba(249, 119, 53, 1) 53%);
   padding-left: 30px;
+  padding-right: 30px;
 }
 
 .hero-content {
@@ -38,8 +36,7 @@ body {
   z-index: 2;
   max-width: 600px;
   padding: 20px;
-  text-align: center;
-  /* Cho cân trái nếu cần */
+  text-align: left; /* Default for larger screens */
 }
 
 .hero-content h1 {
@@ -64,7 +61,6 @@ body {
 .keywords-highlight {
   font-size: 1em;
   margin-top: 10px;
-  /* thêm dòng này */
   margin-bottom: 40px;
   font-weight: bold;
   color: white;
@@ -82,10 +78,8 @@ body {
   font-weight: bold;
   text-transform: uppercase;
   background-color: #fff;
-  color: var(--color-orange);
+  color: rgb(254, 93, 13);
   text-decoration: none;
-  border: 2px solid var(--color-orange); /* Thêm viền để rõ hơn */
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a.hero-btn {
@@ -93,8 +87,7 @@ a.hero-btn {
 }
 
 .hero-btn:hover {
-  background-color: var(--color-orange);
-  color: #fff;
+  color: floralwhite;
 }
 
 .carousel-container {
@@ -127,15 +120,29 @@ a.hero-btn {
   from {
     transform: rotateY(0deg);
   }
-
   to {
     transform: rotateY(-360deg);
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1500px) {
+  .hero-section {
+    min-height: 70vh; /* Reduced height for smaller screens but still visible */
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    background: linear-gradient(90deg, rgba(250, 158, 112, 1) 10%, rgba(249, 119, 53, 1) 53%); /* Ensure background persists */
+  }
+
+  .hero-content {
+    text-align: center; /* Center text for smaller screens */
+    max-width: 100%; /* Allow content to take full width if needed */
+    padding: 20px;
+  }
+
   .hero-content h1 {
-    font-size: 5em; /* Tăng kích thước lớn hơn desktop */
+    font-size: 5em;
     line-height: 1.1;
   }
 
@@ -153,15 +160,10 @@ a.hero-btn {
   }
 
   .carousel-container {
-    display: none;
+    display: none; /* Hide carousel on smaller screens */
   }
-}
 
-@media (max-width: 768px) {
-  .hero-section {
-    height: 50vh;
-    padding-left: 15px;
-    align-items: flex-start;
-    padding-top: 120px;
+  .hero-bg {
+    display: none; /* Hide background image on smaller screens to ensure gradient is visible */
   }
 }
