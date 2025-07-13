@@ -7,17 +7,17 @@
 
 /* Định nghĩa các biến CSS cho bảng màu */
 :root {
-  --color-pink: #f27405;
+  --color-pink: #f299a0;
   --color-mint: #79d9be;
-  --color-dark-blue: rgb(23, 24, 54);
+  --color-dark-blue: rgb(48, 51, 132);
   /* --color-: rgb(23, 24, 54); */
   --color-yellow: #f2b705;
   --color-orange: #f27405;
 
   /* Các màu nền và chữ chung dựa trên bảng màu */
-  --primary-bg: #fcfdfc; /* Gần như trắng, nhưng có chút sắc thái mát mẻ để hòa vào màu mint */
+  --primary-bg: #f5edf3; /* Gần như trắng, nhưng có chút sắc thái mát mẻ để hòa vào màu mint */
   --card-bg: #ffffff; /* Nền cho các khối nội dung, card */
-  --text-dark: #333; /* Màu chữ chính */
+  --text-dark: #333333; /* Màu chữ chính */
   --text-medium: #555; /* Màu chữ phụ */
   --heading-color: var(--color-dark-blue); /* Tiêu đề màu xanh lá đậm */
   --button-color: var(--color-orange); /* Nút màu cam tươi */
