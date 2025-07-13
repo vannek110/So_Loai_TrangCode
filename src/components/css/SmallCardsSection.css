@@ -1,126 +1,122 @@
 /* src/components/css/SmallCardsSection.css */
-
-/* Đảm bảo Poppins được load nếu bạn muốn nó cho toàn trang hoặc riêng section này */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 /* Áp dụng font cho tất cả các phần tử trong section này */
 .small-cards-section * {
-    font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .small-cards-section {
-    padding: 80px 0; /* Giữ padding mặc định của section */
-    background-color: transparent; /* Để nền hòa vào body (var(--primary-bg)) */
-    text-align: center; /* Căn giữa nội dung toàn section */
+  padding: 80px 0; /* Giữ padding mặc định của section */
+  background-color: transparent; /* Để nền hòa vào body (var(--primary-bg)) */
+  text-align: center; /* Căn giữa nội dung toàn section */
 }
 
 /* Kế thừa từ .section-title trong index.css */
 .small-cards-section .section-title {
-    /* Đảm bảo style chung của section-title được áp dụng */
-    /* Có thể tùy chỉnh màu sắc nếu muốn khác với default: */
-    color: var(--heading-color); /* Màu xanh lá đậm từ index.css */
-    margin-bottom: 60px; /* Tăng khoảng cách dưới tiêu đề */
+  color: var(--heading-color); /* Màu xanh lá đậm từ index.css */
+  margin-bottom: 60px; /* Tăng khoảng cách dưới tiêu đề */
 }
 
 .small-cards-grid {
-    display: grid;
-    /* 3 cột cho desktop, mỗi cột tự co giãn, min 280px */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px; /* Khoảng cách giữa các card */
-    max-width: 1000px; /* Giới hạn độ rộng của grid để trông gọn gàng */
-    margin: 0 auto; /* Căn giữa grid */
+  display: grid;
+  /* 3 cột cho desktop, mỗi cột tự co giãn, min 280px */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px; /* Khoảng cách giữa các card */
+  max-width: 1000px; /* Giới hạn độ rộng của grid để trông gọn gàng */
+  margin: 0 auto; /* Căn giữa grid */
 }
 
 .small-card-item {
-    /* Kế thừa từ .card-box trong index.css: nền trắng, bo góc, đổ bóng */
-    background-color: var(--card-bg); /* Nền trắng */
-    border-radius: 12px;
-    box-shadow: 0 5px 20px var(--shadow-light); /* Đổ bóng nhẹ */
-    padding: 30px;
-    text-align: center; /* Căn giữa nội dung trong card */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.05); /* Viền rất nhẹ */
+  /* Kế thừa từ .card-box trong index.css: nền trắng, bo góc, đổ bóng */
+  background-color: var(--card-bg); /* Nền trắng */
+  border-radius: 12px;
+  box-shadow: 0 5px 20px var(--shadow-light); /* Đổ bóng nhẹ */
+  padding: 30px;
+  text-align: center; /* Căn giữa nội dung trong card */
+  border: 1px solid var(--border-accent-color); /* Viền rất nhẹ */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .small-card-item:hover {
-    transform: translateY(-8px); /* Nâng card lên khi hover */
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* Bóng mạnh hơn khi hover */
+  transform: translateY(-8px); /* Nâng card lên khi hover */
+  box-shadow: 0 8px 30px var(--shadow-accent-color);
 }
 
 .small-card-item img {
-    width: 80px; /* Kích thước icon */
-    height: 80px;
-    object-fit: cover; /* Đảm bảo icon không bị méo */
-    margin-bottom: 25px; /* Khoảng cách dưới icon */
-    border-radius: 50%; /* Icon có thể là hình tròn */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Bóng nhẹ cho icon */
-    transition: transform 0.3s ease;
+  width: 80px; /* Kích thước icon */
+  height: 80px;
+  object-fit: cover; /* Đảm bảo icon không bị méo */
+  margin-bottom: 25px; /* Khoảng cách dưới icon */
+  border-radius: 50%; /* Icon có thể là hình tròn */
+  box-shadow: 0 2px 8px var(--shadow-light);
+  transition: transform 0.3s ease;
 }
 
 .small-card-item:hover img {
-    transform: scale(1.1); /* Phóng to icon nhẹ khi hover card */
+  transform: scale(1.1); /* Phóng to icon nhẹ khi hover card */
 }
 
 .small-card-item h3 {
-    font-size: 1.6em; /* Kích thước tiêu đề card */
-    color: var(--heading-color); /* Màu xanh lá đậm từ index.css */
-    margin-bottom: 15px; /* Khoảng cách dưới tiêu đề card */
-    font-weight: 600;
+  font-size: 1.6em; /* Kích thước tiêu đề card */
+  color: var(--heading-color); /* Màu xanh lá đậm từ index.css */
+  margin-bottom: 15px; /* Khoảng cách dưới tiêu đề card */
+  font-weight: 600;
 }
 
 .small-card-item p {
-    font-size: 1em; /* Kích thước chữ mô tả */
-    color: var(--text-medium); /* Màu chữ phụ từ index.css */
-    line-height: 1.5;
+  font-size: 1em; /* Kích thước chữ mô tả */
+  color: var(--text-medium); /* Màu chữ phụ từ index.css */
+  line-height: 1.5;
 }
 
 .small-card-item .keyword {
-    color: var(--color-orange); /* Màu cam tươi từ index.css cho từ khóa */
-    font-weight: bold;
+  color: var(--color-orange); /* Màu cam tươi từ index.css cho từ khóa */
+  font-weight: bold;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .small-cards-section {
-        padding: 50px 0; /* Giảm padding tổng thể */
-    }
-    .small-cards-section .section-title {
-        font-size: 2.2em;
-        margin-bottom: 40px;
-    }
-    .small-cards-grid {
-        grid-template-columns: 1fr; /* 1 cột trên mobile */
-        gap: 20px; /* Giảm khoảng cách */
-        padding: 0 20px; /* Thêm padding ngang cho grid trên mobile */
-    }
-    .small-card-item {
-        padding: 25px;
-    }
-    .small-card-item img {
-        width: 70px;
-        height: 70px;
-        margin-bottom: 20px;
-    }
-    .small-card-item h3 {
-        font-size: 1.4em;
-    }
-    .small-card-item p {
-        font-size: 0.9em;
-    }
+  .small-cards-section {
+    padding: 50px 0; /* Giảm padding tổng thể */
+  }
+  .small-cards-section .section-title {
+    font-size: 2.2em;
+    margin-bottom: 40px;
+  }
+  .small-cards-grid {
+    grid-template-columns: 1fr; /* 1 cột trên mobile */
+    gap: 20px; /* Giảm khoảng cách */
+    padding: 0 20px; /* Thêm padding ngang cho grid trên mobile */
+  }
+  .small-card-item {
+    padding: 25px;
+  }
+  .small-card-item img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 20px;
+  }
+  .small-card-item h3 {
+    font-size: 1.4em;
+  }
+  .small-card-item p {
+    font-size: 0.9em;
+  }
 }
 
 @media (max-width: 480px) {
-    .small-cards-section .section-title {
-        font-size: 1.8em;
-    }
-    .small-card-item img {
-        width: 60px;
-        height: 60px;
-    }
-    .small-card-item h3 {
-        font-size: 1.2em;
-    }
-    .small-card-item p {
-        font-size: 0.85em;
-    }
+  .small-cards-section .section-title {
+    font-size: 1.8em;
+  }
+  .small-card-item img {
+    width: 60px;
+    height: 60px;
+  }
+  .small-card-item h3 {
+    font-size: 1.2em;
+  }
+  .small-card-item p {
+    font-size: 0.85em;
+  }
 }

@@ -21,16 +21,17 @@
 }
 
 .step-circle-container {
+  background-color: var(--card-bg);
   margin-left: auto;
   margin-right: auto;
   width: 100%;
   max-width: 28rem;
   border-radius: 2rem;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
-
-  background-color: rgb(228, 228, 228);
-
+  box-shadow: 0 20px 25px -5px var(--shadow-light),
+    0 10px 10px -5px var(--shadow-light);
+  border: 1px solid var(--border-accent-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .step-indicator-row {
@@ -73,18 +74,18 @@
   transition: all 350ms;
   border-radius: 0.25rem;
   padding: 0.25rem 0.5rem;
-  color: #000000;
+  color: var(--text-dark);
   cursor: pointer;
 }
 
 .back-button:hover {
-  color: #52525b;
+  color: var(--text-medium);
 }
 
 .back-button.inactive {
   pointer-events: none;
   opacity: 0.5;
-  color: #a3a3a3;
+  color: var(--text-medium);
 }
 
 .next-button {
@@ -93,7 +94,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 9999px;
-  background-color: rgb(83, 40, 254);
+  background-color: var(--button-color);
   color: #fff;
   font-weight: 500;
   letter-spacing: -0.025em;
@@ -102,19 +103,18 @@
 }
 
 .next-button:hover {
-  background-color: rgb(83, 40, 254);
+  background-color: var(--button-hover-color);
 }
 
 .next-button:active {
-  background-color: rgb(83, 40, 254);
+  background-color: var(--button-hover-color);
 }
 
 .step-indicator {
   position: relative;
   cursor: pointer;
   outline: none;
-  color: rgb(23, 24, 54);
-  
+  color: var(--heading-color);
 }
 
 .step-indicator-inner {
@@ -125,17 +125,16 @@
   justify-content: center;
   border-radius: 9999px;
   font-weight: 600;
-  background-color: white; /* hoặc transparent nếu bạn muốn nền mờ */
-  border: 2px solid rgb(23, 24, 54); /* đường viền tròn */
-  color: rgb(23, 24, 54); /* màu số bước hoặc icon */
+  background-color: var(--primary-bg);
+  border: 2px solid var(--text-medium); /* đường viền tròn */
+  color: var(--text-dark); /* màu số bước hoặc icon */
+  transition: all 0.3s ease;
 }
 
-
-.active-dot {
-  height: 0.75rem;
-  width: 0.75rem;
-  border-radius: 9999px;
-  background-color: #fff;
+.step-indicator.active .step-indicator-inner {
+  background-color: var(--button-color);
+  border-color: var(--button-color);
+  color: #fff;
 }
 
 .step-number {
@@ -150,7 +149,8 @@
   flex: 1;
   overflow: hidden;
   border-radius: 0.25rem;
-  background-color: #52525b;
+  background-color: var(--text-medium);
+  transition: background-color 0.3s ease;
 }
 
 .step-connector-inner {
@@ -158,6 +158,8 @@
   left: 0;
   top: 0;
   height: 100%;
+  background-color: var(--button-color);
+  transition: background-color 0.3s ease;
 }
 
 .check-icon {
