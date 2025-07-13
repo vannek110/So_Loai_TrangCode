@@ -70,6 +70,7 @@
   box-shadow: 0 4px 15px var(--intro-section-shadow);
 }
 
+
 .left-content-wrapper {
   max-width: auto;
   z-index: 2;
@@ -114,6 +115,7 @@
   transform: translateY(-3px);
   box-shadow: 0 8px 25px var(--shadow-accent-color);
   text-decoration: none;
+  color: white;
 }
 
 .split-right-main-column {
