@@ -1,7 +1,8 @@
 // src/App.js
 import React, { useState } from "react";
 import "./index.css";
-
+import iconSun from './assets/sun.svg';
+import iconMoon from './assets/moon.svg';
 import { useTheme } from "./context/ThemeContext";
 
 // Import components
@@ -54,13 +55,11 @@ const ThemeToggleButton = () => {
       onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
       onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
     >
-      {/* Hiển thị icon mặt trăng hoặc mặt trời tùy vào theme hiện tại */}
-      {/* Bạn cần đảm bảo đã import FontAwesome trong index.html */}
-      {theme === "light" ? (
-        <i className="fas fa-moon"></i>
-      ) : (
-        <i className="fas fa-sun"></i>
-      )}
+      <img
+        src={theme === "light" ? iconMoon : iconSun}
+        alt="Theme Toggle"
+        style={{ width: '28px', height: '28px', objectFit: 'contain' }}
+      />
     </button>
   );
 };
