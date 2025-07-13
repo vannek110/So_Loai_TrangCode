@@ -1,6 +1,4 @@
 /* src/index.css */
-
-/* Basic Reset */
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +9,8 @@
 :root {
   --color-pink: #f299a0;
   --color-mint: #79d9be;
-  --color-: rgb(23, 24, 54);
+  --color-dark-blue: rgb(23, 24, 54);
+  /* --color-: rgb(23, 24, 54); */
   --color-yellow: #f2b705;
   --color-orange: #f27405;
 
@@ -20,11 +19,15 @@
   --card-bg: #ffffff; /* Nền cho các khối nội dung, card */
   --text-dark: #333; /* Màu chữ chính */
   --text-medium: #555; /* Màu chữ phụ */
-  --heading-color: var(rgb(23, 24, 54)); /* Tiêu đề màu xanh lá đậm */
+  --heading-color: var(--color-dark-blue); /* Tiêu đề màu xanh lá đậm */
   --button-color: var(--color-orange); /* Nút màu cam tươi */
   --button-hover-color: #e66600; /* Cam đậm hơn khi hover */
   --link-color: var(--color-mint); /* Liên kết màu xanh mint */
+
+  /* Các màu viền và bóng (Light Mode) */
   --shadow-light: rgba(0, 0, 0, 0.08); /* Đổ bóng nhẹ nhàng */
+  --border-accent-color: rgba(242, 116, 5, 0.2); /* Màu viền cam trong suốt */
+  --shadow-accent-color: rgba(242, 116, 5, 0.1); /* Màu bóng cam trong suốt */
 }
 
 body {
@@ -34,6 +37,7 @@ body {
   color: var(--text-dark);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Thêm transition cho body */
 }
 
 html {
@@ -126,6 +130,15 @@ body.dark {
   --shadow-light: rgba(0, 0, 0, 0.2); /* Đổ bóng tối hơn trên nền tối */
   --button-color: var(--color-pink); /* Nút có thể đổi sang màu hồng */
   --button-hover-color: #e08a92; /* Hồng đậm hơn khi hover */
+
+  /* THÊM MỚI: Ghi đè màu viền và bóng cho Dark Mode */
+  --border-accent-color: rgba(
+    242,
+    116,
+    5,
+    0.4
+  ); /* Viền cam đậm hơn trên nền tối */
+  --shadow-accent-color: rgba(242, 116, 5, 0.15); /* Bóng cam đậm hơn */
 }
 
 /* Thêm hiệu ứng chuyển đổi mượt mà cho các card */

@@ -52,7 +52,7 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background-color: orange; /* Cam từ bảng màu */
+  background-color: var(--color-orange); /* Cam từ bảng màu */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -68,15 +68,15 @@
     grid-template-rows: auto;
   }
   .gallery-img.right {
-      grid-column: 1 / 2;
-      grid-row: 3 / 4;
-      height: 220px;
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    height: 220px;
   }
   .color-circle {
-      position: relative;
-      top: unset;
-      left: unset;
-      transform: none;
-      margin: 20px auto;
+    position: relative;
+    top: unset;
+    left: unset;
+    transform: none;
+    margin: 20px auto;
   }
 }
