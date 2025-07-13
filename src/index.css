@@ -9,27 +9,27 @@
 
 /* Định nghĩa các biến CSS cho bảng màu */
 :root {
-  --color-pink: #F299A0;
-  --color-mint: #79D9BE;
-  --color-:  rgb(23, 24, 54);;
-  --color-yellow: #F2B705;
-  --color-orange: #F27405;
+  --color-pink: #f299a0;
+  --color-mint: #79d9be;
+  --color-: rgb(23, 24, 54);
+  --color-yellow: #f2b705;
+  --color-orange: #f27405;
 
   /* Các màu nền và chữ chung dựa trên bảng màu */
-  --primary-bg: #FCFDFC; /* Gần như trắng, nhưng có chút sắc thái mát mẻ để hòa vào màu mint */
-  --card-bg: #FFFFFF;    /* Nền cho các khối nội dung, card */
-  --text-dark: #333;      /* Màu chữ chính */
-  --text-medium: #555;    /* Màu chữ phụ */
-  --heading-color: var(--color-green-dark); /* Tiêu đề màu xanh lá đậm */
+  --primary-bg: #fcfdfc; /* Gần như trắng, nhưng có chút sắc thái mát mẻ để hòa vào màu mint */
+  --card-bg: #ffffff; /* Nền cho các khối nội dung, card */
+  --text-dark: #333; /* Màu chữ chính */
+  --text-medium: #555; /* Màu chữ phụ */
+  --heading-color: var(rgb(23, 24, 54)); /* Tiêu đề màu xanh lá đậm */
   --button-color: var(--color-orange); /* Nút màu cam tươi */
-  --button-hover-color: #E66600; /* Cam đậm hơn khi hover */
+  --button-hover-color: #e66600; /* Cam đậm hơn khi hover */
   --link-color: var(--color-mint); /* Liên kết màu xanh mint */
   --shadow-light: rgba(0, 0, 0, 0.08); /* Đổ bóng nhẹ nhàng */
 }
 
 body {
   background-color: var(--primary-bg); /* Nền chính xuyên suốt */
-  font-family: 'Arial', sans-serif; /* Hoặc font khác phù hợp */
+  font-family: "Arial", sans-serif; /* Hoặc font khác phù hợp */
   line-height: 1.6;
   color: var(--text-dark);
   -webkit-font-smoothing: antialiased;
@@ -65,7 +65,7 @@ section {
 .section-title {
   text-align: center;
   font-size: 2.8em;
-  color: rgb(23, 24, 54);
+  color: var(--heading-color);
   margin-bottom: 50px;
 }
 
@@ -107,6 +107,38 @@ p {
   color: var(--text-medium);
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: rgb(23, 24, 54);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+}
+/* ========== dark mode=========== */
+body.dark {
+  --primary-bg: rgb(23, 24, 54); /* Nền chính màu xanh đậm */
+  --card-bg: rgb(35, 38, 70); /* Nền card tối hơn một chút */
+  --text-dark: #eaeaea; /* Chữ chính màu trắng ngà */
+  --text-medium: #b0b0b0; /* Chữ phụ màu xám nhạt */
+  --heading-color: #ffffff; /* Tiêu đề màu trắng tinh */
+  --link-color: var(--color-mint); /* Liên kết giữ màu mint cho nổi bật */
+  --shadow-light: rgba(0, 0, 0, 0.2); /* Đổ bóng tối hơn trên nền tối */
+  --button-color: var(--color-pink); /* Nút có thể đổi sang màu hồng */
+  --button-hover-color: #e08a92; /* Hồng đậm hơn khi hover */
+}
+
+/* Thêm hiệu ứng chuyển đổi mượt mà cho các card */
+.card-box {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Đảm bảo các nút bấm cũng có hiệu ứng chuyển đổi */
+.btn {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Có thể bạn muốn đổi màu keyword trong dark mode để dễ đọc hơn */
+body.dark .keyword {
+  color: var(--color-yellow); /* Đổi sang màu vàng cho nổi bật */
 }

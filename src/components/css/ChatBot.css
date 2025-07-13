@@ -5,15 +5,16 @@
   right: 30px;
   width: 420px;
   height: 500px;
-  background: white;
-  border: 1px solid #ccc;
+  background: var(--card-bg);
+  border: 1px solid var(--text-medium);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 20px var(--shadow-light);
   font-family: Arial, sans-serif;
   z-index: 9999;
   display: flex;
   flex-direction: column;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 /* Thanh header */
@@ -32,7 +33,8 @@
   flex: 1;
   overflow-y: auto;
   padding: 12px;
-  background: #f9f9f9;
+  background: var(--primary-bg);
+  transition: background-color 0.3s ease;
 }
 
 /* Tin nhắn */
@@ -42,11 +44,16 @@
   border-radius: 15px;
   max-width: 80%;
   clear: both;
+  white-space: pre-line;
 }
 
 .chat-message.bot {
-  background: #e1e1e1;
+  background: var(--card-bg);
+  color: var(--text-dark);
   float: left;
+  border: 1px solid var(--text-medium);
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .chat-message.user {
@@ -58,7 +65,8 @@
 /* Input */
 .chatbot-input {
   display: flex;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--text-medium);
+  transition: border-color 0.3s ease;
 }
 
 .chatbot-input input {
@@ -66,6 +74,9 @@
   padding: 12px;
   border: none;
   outline: none;
+  background-color: var(--primary-bg);
+  color: var(--text-dark);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .chatbot-input button {
@@ -77,7 +88,8 @@
 }
 
 /* Nút X và Thu nhỏ */
-.close-btn, .minimize-btn {
+.close-btn,
+.minimize-btn {
   background: none;
   border: none;
   color: white;
@@ -96,7 +108,7 @@
   background: rgb(255, 85, 0);
   border: 1px solid rgba(0, 0, 0, 0.2); /* Viền đen mờ */
   border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 2.5); /* Mờ hơn để tạo chiều sâu */
+  box-shadow: 0 4px 10px var(--shadow-light); /* Mờ hơn để tạo chiều sâu */
   cursor: pointer;
   z-index: 9999;
   padding: 0;
@@ -105,7 +117,6 @@
   justify-content: center;
   align-items: center;
 }
-
 
 .chatbot-icon-button img {
   width: 32px;
@@ -122,7 +133,7 @@
 
 /* Button bao quanh logo */
 .chatbot-logo-button {
-  background-color: white;
+  background-color: var(--primary-bg);
   border: none;
   border-radius: 50%;
   width: 36px;
@@ -132,7 +143,8 @@
   justify-content: center;
   padding: 0;
   cursor: default;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 3px var(--shadow-light);
+  transition: background-color 0.3s ease;
 }
 
 /* Logo bên trong */
@@ -142,12 +154,10 @@
   object-fit: contain;
 }
 
-.chat-message.bot {
-  background-color: #f1f1f1;
+/* .chat-message.bot {
+  background-color: #c41212;
   padding: 8px 12px;
   border-radius: 12px;
   margin: 4px 0;
   white-space: pre-line;
-}
-
-
+} */
