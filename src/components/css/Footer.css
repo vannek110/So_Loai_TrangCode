@@ -1,9 +1,11 @@
 /* src/components/css/Footer.css */
 .footer {
-  background-color: #222; /* Giữ màu nền tối */
-  color: #eee; /* Màu chữ sáng hơn cho nền tối */
+  background-color: var(--card-bg); /* Giữ màu nền tối */
+  color: var(--text-medium); /* Màu chữ sáng hơn cho nền tối */
   padding: 60px 0 20px;
   font-size: 0.9em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-top: 1px solid var(--text-medium); /* Thêm viền để phân tách */
 }
 .footer .container {
   max-width: 1200px;
@@ -17,7 +19,9 @@
   gap: 30px;
   margin-bottom: 40px;
 }
-.footer-branding, .footer-links, .footer-contact {
+.footer-branding,
+.footer-links,
+.footer-contact {
   flex: 1;
   min-width: 250px;
 }
@@ -26,9 +30,10 @@
   margin-bottom: 15px;
 }
 .footer-branding p {
-  color: #bbb;
+  color: var(--text-medium);
 }
-.footer-links h4, .footer-contact h4 {
+.footer-links h4,
+.footer-contact h4 {
   font-size: 1.3em;
   color: rgb(249, 119, 53); /* Màu xanh mint cho tiêu đề footer */
 }
@@ -40,7 +45,7 @@
   margin-bottom: 10px;
 }
 .footer-links ul li a {
-  color: #eee;
+  color: var(--text-dark);
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -50,14 +55,15 @@
 .footer-contact p {
   margin-bottom: 8px;
   line-height: 1.6;
-  color: #bbb;
+  color: var(--text-medium);
 }
 
 .footer-bottom {
   text-align: center;
-  border-top: 1px solid #444;
+  border-top: 1px solid var(--text-medium);
   padding-top: 20px;
-  color: #aaa;
+  color: var(--text-medium);
+  opacity: 0.8;
 }
 .made-with {
   font-size: 0.8em;
@@ -71,12 +77,12 @@
   }
 }
 
-h5{
+h5 {
   padding-top: 10px;
   color: orange;
 }
 
-h6{
+h6 {
   padding-top: 42px;
   color: orange;
   font-size: 11px;

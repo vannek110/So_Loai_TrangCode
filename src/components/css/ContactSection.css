@@ -15,25 +15,20 @@
 }
 
 /* --- STYLE CHO STEPPER WRAPPER --- */
-/* Đây là container bao Stepper, nhưng KHÔNG TẠO KHUNG nữa */
 .contact-stepper-wrapper {
-  max-width: 600px; /* Vẫn giữ max-width để giới hạn chiều rộng tổng thể */
+  max-width: 600px;
   height: auto;
-  margin: 0 auto 50px auto; /* Vẫn giữ margin để căn giữa và tạo khoảng cách */
-  
-  /* *** THAY ĐỔI Ở ĐÂY: Bỏ các style tạo khung *** */
-  background-color: transparent; /* Nền trong suốt */
-  box-shadow: none; /* Bỏ đổ bóng */
-  border-radius: 0; /* Bỏ bo góc */
-  padding: 0; /* Bỏ padding ở đây, padding sẽ nằm trong Stepper.css */
-  
-  text-align: left; /* Để nội dung bên trong vẫn căn trái */
+  margin: 0 auto 50px auto;
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  text-align: left;
 }
 
-/* Style cho các phần tử input/select/textarea (vẫn ở đây vì chúng là style của form) */
 .contact-stepper-wrapper h3 {
   font-size: 1.8em;
-  color: rgb(23, 24, 54);
+  color: var(--heading-color);
   margin-bottom: 20px;
 }
 
@@ -62,12 +57,14 @@
 .form-group textarea {
   width: 100%;
   padding: 14px;
-  border: 1px solid rgba(var(--color-green-dark), 0.3);
+  border: 1px solid var(--text-medium);
   border-radius: 8px;
   font-size: 1em;
   box-sizing: border-box;
   color: var(--text-dark);
   background-color: var(--primary-bg);
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 /* Placeholder color for inputs */
@@ -75,18 +72,17 @@
 .form-group input[type="email"]::placeholder,
 .form-group input[type="tel"]::placeholder,
 .form-group textarea::placeholder {
-    color: var(--text-medium);
-    opacity: 0.8;
+  color: var(--text-medium);
+  opacity: 0.8;
 }
 
-
 .form-group select {
-    appearance: none;
-    -webkit-appearance: none;
-    background-image: url('data:image/svg+xml;utf8,<svg fill="%23216fa6" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 20px;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23216fa6" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px;
 }
 
 .form-group textarea {
@@ -94,7 +90,8 @@
 }
 
 .summary-info p {
-  background-color: rgba(var(--color-orange), 0.2);
+  background-color: var(--card-bg);
+  border: 1px solid var(--button-color);
   padding: 10px 15px;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -102,50 +99,54 @@
   color: var(--text-dark);
 }
 .summary-info p strong {
-    color: rgb(23, 24, 54);
+  color: var(--heading-color);
 }
 
 .final-message {
-    font-size: 1.1em;
-    font-weight: bold;
-    color: var(--color-orange);
-    margin-top: 30px;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: var(--color-orange);
+  margin-top: 30px;
 }
 
 /* --- STYLE CHO THÔNG TIN LIÊN HỆ TĨNH --- */
 .static-contact-info {
   margin-top: 50px;
   padding: 30px;
-  background-color: var(--primary-bg);
+  background-color: var(--card-bg);
   border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 10px var(--shadow-light);
   text-align: left;
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 .static-contact-info h3 {
-    font-size: 1.5em;
-    color: rgb(23, 24, 54);
-    margin-bottom: 15px;
+  font-size: 1.5em;
+  color: var(--heading-color);
+  margin-bottom: 15px;
 }
 .static-contact-info p {
-    font-size: 1em;
-    color: var(--text-medium);
-    margin-bottom: 8px;
+  font-size: 1em;
+  color: var(--text-medium);
+  margin-bottom: 8px;
 }
-
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
   .contact-section {
     padding: 80px 0;
   }
-  .contact-stepper-wrapper {
-    padding: 0; /* Bỏ padding ở đây */
+  .contact-stepper-wrapper,
+  .static-contact-info {
+    padding: 0;
     max-width: 95%;
     margin-left: auto;
     margin-right: auto;
+  }
+  .static-contact-info {
+    padding: 20px;
   }
   .contact-stepper-wrapper h3 {
     font-size: 1.5em;
@@ -156,12 +157,6 @@
   .form-group select,
   .form-group textarea {
     padding: 12px;
-  }
-  .static-contact-info {
-    padding: 20px;
-    max-width: 95%;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
@@ -194,13 +189,14 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
+  background-color: var(--card-bg);
   padding: 40px 50px;
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px var(--shadow-light);
   text-align: center;
   z-index: 9999;
   animation: fadeInOut 4s ease-in-out;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .toast-icon {
@@ -219,14 +215,67 @@
 
 .custom-toast-center p {
   font-size: 1.05em;
-  color: #333;
+  color: var(--text-dark);
   margin: 0;
 }
 
 @keyframes fadeInOut {
-  0% { opacity: 0; transform: translate(-50%, -60%); }
-  10% { opacity: 1; transform: translate(-50%, -50%); }
-  90% { opacity: 1; transform: translate(-50%, -50%); }
-  100% { opacity: 0; transform: translate(-50%, -60%); }
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  10% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  90% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
 }
 
+/* Nền của thanh tiến trình (stepper) */
+.contact-stepper-wrapper .step-circle-container {
+  background-color: #f0f0f0; /* Màu xám rất nhạt cho light mode */
+  transition: background-color 0.3s ease;
+}
+
+body.dark .contact-stepper-wrapper .step-circle-container {
+  background-color: var(--card-bg); /* Dùng màu nền card cho dark mode */
+}
+
+/* Các vòng tròn của từng bước */
+.contact-stepper-wrapper .step-circle {
+  background-color: #ccc; /* Màu xám cho các bước chưa active ở light mode */
+  color: #fff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark .contact-stepper-wrapper .step-circle {
+  background-color: var(
+    --text-medium
+  ); /* Màu xám nhạt cho các bước chưa active ở dark mode */
+  color: var(--primary-bg); /* Màu nền chính (tối) cho chữ bên trong */
+}
+
+/* Vòng tròn của bước đang active */
+.contact-stepper-wrapper .step-circle.active {
+  background-color: var(
+    --button-color
+  ); /* Dùng màu nút chính (cam hoặc hồng) */
+  color: white; /* Chữ luôn là màu trắng */
+}
+
+/* Đường kẻ nối giữa các bước */
+.contact-stepper-wrapper .step-connector {
+  background-color: #e4e4e4; /* Màu xám nhạt cho light mode */
+  transition: background-color 0.3s ease;
+}
+
+body.dark .contact-stepper-wrapper .step-connector {
+  background-color: var(--text-medium);
+}

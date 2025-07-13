@@ -108,4 +108,58 @@ const ChatBot = ({ onClose }) => {
   );
 };
 
+<<<<<<< HEAD
 export default ChatBot;
+=======
+  return (
+    <>
+      {!isMinimized && (
+        <div className="chatbot-container">
+          <div className="chatbot-header">
+            <div className="chatbot-title">
+              <button className="chatbot-logo-button">
+                <img src={BTECLogo} alt="BTEC Logo" className="chatbot-logo" />
+              </button>
+              <span>Cao Đẳng Anh Quốc BTEC FPT</span>
+            </div>
+
+            <div>
+              <button className="minimize-btn" onClick={() => setIsMinimized(true)}>−</button>
+              {/* <button className="close-btn" onClick={onClose}>×</button> */}
+            </div>
+          </div>
+
+          <div className="chatbot-body">
+            {messages.map((msg, i) => (
+              <div key={i} className={`chat-message ${msg.from}`}>{msg.text}</div>
+            ))}
+          </div>
+          <div className="chatbot-input">
+            <input
+              type="text"
+              placeholder="Nhập câu hỏi..."
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && handleSend()}
+            />
+            <button onClick={handleSend}>Gửi</button>
+          </div>
+        </div>
+      )}
+
+      {isMinimized && (
+        <div className="chatbot-icon-button">
+          <img
+            src={ChatBotIMG}
+            alt="Chat Icon"
+            onClick={() => setIsMinimized(false)}
+          />
+        </div>
+      )}
+
+    </>
+  );
+};
+
+export default ChatBot;
+>>>>>>> c02fc69ac38b75601c0ff9324ff3c100445cbb18

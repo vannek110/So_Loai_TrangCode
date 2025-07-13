@@ -24,11 +24,12 @@
 }
 .mid-section-image-text .text-part h3 {
   font-size: 2.2em; /* To hơn */
-  color: rgb(23, 24, 54);
+  color: var(--heading-color);
   margin-bottom: 20px;
 }
 .mid-section-image-text .text-part p {
   font-size: 1.1em;
+  color: var(--text-medium);
   margin-bottom: 25px;
 }
 .mid-section-image-text.reversed .content-wrapper {

@@ -1,19 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // Import CSS của AOS
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import CSS của AOS
+import { ThemeProvider } from "./context/ThemeContext";
+
 AOS.init({
   duration: 1000, // Thời gian animation mặc định (tính bằng ms)
-  once: true,    // Chỉ chạy animation một lần khi cuộn đến
+  once: true, // Chỉ chạy animation một lần khi cuộn đến
   mirror: false, // Không lặp lại animation khi cuộn lên/xuống
 });
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>
 );
 
