@@ -21,7 +21,7 @@ const programs = [
     {
         name: 'Kỹ thuật + Công nghệ bán dẫn',
         description: 'Đón đầu CÔNG NGHỆ CHIP: Đi sâu vào ngành bán dẫn, thiết kế vi mạch. Trở thành Kỹ sư bán dẫn, góp phần tạo nên "trái tim" công nghệ.',
-        link: 'https://btec.fpt.edu.vn/nganh/ky-thuat-cong-nghe-ban-dan'
+        link: 'https://btec.fpt.edu.vn/tuyen-sinh-cong-nghe-ban-dan-2025/'
     },
 ];
 

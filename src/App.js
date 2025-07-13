@@ -101,7 +101,7 @@ function App() {
           title="Giá Trị Cổ Truyền – Nền Tảng Vững Chắc"
           description="BTEC tự hào gìn giữ và phát huy những nét đẹp cổ truyền Việt Nam, lồng ghép vào chương trình học để tạo nên những cá nhân toàn diện."
           buttonText="Khám phá di sản"
-          buttonHref="#intro"
+          buttonHref="https://btec.fpt.edu.vn/thong-diep-tam-nhin-su-menh/"
           isReversed={true}
         />
         <InspirationGallery />
