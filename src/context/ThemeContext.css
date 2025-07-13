@@ -1,0 +1,111 @@
+/* src/index.css (hoặc một file CSS phù hợp) */
+
+/* Kiểu cho Theme Toggle Switch */
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  position: fixed; /* Giữ vị trí cố định */
+  bottom: 22px; 
+  right: 7px; /* Định vị góc trên bên phải */
+  z-index: 1001; /* Đảm bảo nó nổi trên cùng */
+  padding: 10px; /* Khoảng cách xung quanh switch */
+  background-color: var(--card-bg); /* Nền cho wrapper */
+  border-radius: 20px; /* Bo góc nhẹ */
+  box-shadow: 0 4px 12px var(--shadow-light); /* Đổ bóng */
+  transition: background-color 0.3s ease;
+}
+
+.theme-switch-wrapper span {
+  margin-right: 10px; /* Khoảng cách giữa chữ và switch */
+  color: var(--text-color); /* Màu chữ */
+  font-size: 14px;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: var(--heading-color); /* Màu nền của thanh trượt khi tắt */
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  background-color: #ffffff; /* Thay đổi thành màu trắng tinh */
+  /* Hoặc bạn có thể dùng 'white' */
+  /* background-color: white; */
+
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: var(--primary-color); /* Màu nền của thanh trượt khi bật */
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Các biểu tượng (Font Awesome) - Đảm bảo chúng được hiển thị đúng cách */
+.theme-switch .fas {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px; /* Kích thước icon */
+  color: #fff; /* Màu icon khi switch đang tắt */
+  transition: opacity 0.3s ease;
+}
+
+.theme-switch .fa-moon {
+  left: 8px; /* Vị trí của mặt trăng khi tắt */
+  opacity: 1;
+}
+
+.theme-switch .fa-sun {
+  right: 8px; /* Vị trí của mặt trời khi tắt */
+  opacity: 0; /* Ẩn mặt trời khi tắt */
+}
+
+input:checked + .slider .fa-moon {
+  opacity: 0; /* Ẩn mặt trăng khi bật */
+}
+
+input:checked + .slider .fa-sun {
+  opacity: 1; /* Hiển thị mặt trời khi bật */
+}
+
+/* Điều chỉnh màu sắc cho FontAwesome icons theo theme */
+body.light .theme-switch .fas {
+  color: #fff; /* Màu mặc định cho icons trên slider */
+}
+
+body.dark .theme-switch .fas {
+  color: #fff; /* Màu mặc định cho icons trên slider */
+}

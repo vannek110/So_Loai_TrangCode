@@ -125,7 +125,7 @@ a.hero-btn {
   }
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1300px) {
   .hero-section {
     min-height: 70vh; /* Reduced height for smaller screens but still visible */
     padding: 20px;

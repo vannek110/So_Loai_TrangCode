@@ -1,6 +1,6 @@
 // src/App.js
 import React, { useState } from "react";
-import "./index.css";
+import "./index.css"; // Đảm bảo file CSS này được import
 
 import { useTheme } from "./context/ThemeContext";
 
@@ -24,44 +24,25 @@ import ancientWisdomImg from "./assets/mid-section-img-2.jpg";
 const ThemeToggleButton = () => {
   const { theme, toggleTheme } = useTheme();
 
-  // Style để nút bấm luôn nổi ở góc dưới bên phải
-  const buttonStyle = {
-    position: "fixed",
-    bottom: "100px",
-    right: "37px",
-    zIndex: 1001, // Đảm bảo nó nổi trên cả ChatBot
-    width: "58px",
-    height: "58px",
-    borderRadius: "50%",
-    backgroundColor: "var(--card-bg)",
-    color: "var(--heading-color)",
-    border: "1px solid var(--heading-color)",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    fontSize: "22px",
-    cursor: "pointer",
-    boxShadow: "0 4px 12px var(--shadow-light)",
-    transition:
-      "transform 0.2s ease, background-color 0.3s ease, color 0.3s ease",
-  };
-
   return (
-    <button
-      onClick={toggleTheme}
-      style={buttonStyle}
-      title={`Switch to ${theme === "light" ? "Dark" : "Light"} Mode`}
-      onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
-      onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
-    >
-      {/* Hiển thị icon mặt trăng hoặc mặt trời tùy vào theme hiện tại */}
-      {/* Bạn cần đảm bảo đã import FontAwesome trong index.html */}
-      {theme === "light" ? (
-        <i className="fas fa-moon"></i>
-      ) : (
-        <i className="fas fa-sun"></i>
-      )}
-    </button>
+    // Wrapper cho switch để định vị và thêm style nền
+    <div className="theme-switch-wrapper">
+      <span>{theme === "light" ? "Light Mode" : "Dark Mode"}</span>
+      <label className="theme-switch">
+        <input
+          type="checkbox"
+          checked={theme === "dark"} // Nếu theme là dark, checkbox được checked
+          onChange={toggleTheme}
+          title={`Switch to ${theme === "light" ? "Dark" : "Light"} Mode`}
+        />
+        <span className="slider round">
+          {/* Icons cho mặt trăng và mặt trời */}
+          {/* Đảm bảo FontAwesome đã được import trong index.html hoặc tương tự */}
+          <i className="fas fa-moon"></i>
+          <i className="fas fa-sun"></i>
+        </span>
+      </label>
+    </div>
   );
 };
 
@@ -81,6 +62,7 @@ function App() {
       <MouseTrail />
       <Header onChatToggle={handleChatToggle} />
 
+      {/* Đặt ThemeToggleButton ở đây */}
       <ThemeToggleButton />
 
       <main>
