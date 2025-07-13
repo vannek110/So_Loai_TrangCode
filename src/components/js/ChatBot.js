@@ -108,9 +108,6 @@ const ChatBot = ({ onClose }) => {
   );
 };
 
-<<<<<<< HEAD
-export default ChatBot;
-=======
   return (
     <>
       {!isMinimized && (
@@ -162,4 +159,3 @@ export default ChatBot;
 };
 
 export default ChatBot;
->>>>>>> c02fc69ac38b75601c0ff9324ff3c100445cbb18
